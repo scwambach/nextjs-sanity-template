@@ -1,0 +1,83 @@
+{
+  "name": "project-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "commit": "git add . && cz",
+    "dev": "next dev",
+    "email": "mjml -r emails/contact.mjml --config.minify --config.minifyOptions='{\"minifyCSS\": true, \"removeEmptyAttributes\": false}' -o emails/contact.html",
+    "fullstack": "concurrently \"yarn dev\" \"cd studio && yarn dev\"",
+    "deploy": "concurrently \"git push\" \"cd studio && sanity deploy\"",
+    "test": "jest --watch --coverage",
+    "coverage": "jest --coverage",
+    "lint": "next lint",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.3",
+    "@meronex/icons": "^4.0.0",
+    "@sanity/block-content-to-react": "^3.0.0",
+    "@sanity/client": "^3.4.1",
+    "@sanity/image-url": "^1.0.1",
+    "axios": "^1.2.1",
+    "dayjs": "^1.11.6",
+    "fuse.js": "^6.6.2",
+    "leaflet": "^1.9.3",
+    "next": "13.0.1",
+    "next-sanity": "^1.0.3",
+    "next-sanity-image": "^4.1.0",
+    "nextjs-progressbar": "^0.0.16",
+    "nodemailer": "^6.8.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-js-pagination": "^3.0.3",
+    "react-leaflet": "^4.2.0",
+    "react-medium-image-zoom": "^5.1.2",
+    "react-player": "^2.11.0",
+    "react-portal": "^4.2.2",
+    "react-scripts": "^5.0.1",
+    "react-spinners": "^0.13.7",
+    "sass": "^1.55.0",
+    "styled-components": "^5.3.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.6",
+    "@babel/eslint-parser": "^7.19.1",
+    "@testing-library/jest-dom": "5.16.4",
+    "@testing-library/react": "13.2.0",
+    "@testing-library/user-event": "14.2.0",
+    "@types/jest": "^29.2.3",
+    "@types/leaflet": "^1.9.0",
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.24",
+    "autoprefixer": "^10.4.13",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^9.0.1",
+    "babel-plugin-styled-components": "^2.0.7",
+    "concurrently": "^7.5.0",
+    "cz-customizable": "^7.0.0",
+    "eslint": "^8.26.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "^13.0.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.10",
+    "jest": "28.1.0",
+    "jest-environment-jsdom": "28.1.0",
+    "postcss": "^8.4.18",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "tailwindcss": "^3.2.1",
+    "typescript": "^4.8.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scwambach/project-starter.git"
+  }
+}

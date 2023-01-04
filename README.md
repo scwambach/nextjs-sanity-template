@@ -1,1 +1,1 @@
-# nextjs-sanity-template
+# demo-site

@@ -1,0 +1,32 @@
+.iconFeatures {
+  .feature {
+    &:nth-child(4n - 3) {
+      svg {
+        fill: $red;
+      }
+    }
+    &:nth-child(4n - 2) {
+      svg {
+        fill: $yellow;
+      }
+    }
+    &:nth-child(4n - 1) {
+      svg {
+        fill: $blue;
+      }
+    }
+    &:nth-child(4n) {
+      svg {
+        fill: $navy;
+      }
+    }
+  }
+
+  &.boxed {
+    .feature {
+      svg {
+        fill: $red;
+      }
+    }
+  }
+}

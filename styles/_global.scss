@@ -1,0 +1,107 @@
+body {
+  background-color: $navy;
+
+  * {
+    &::selection {
+      background: $yellow;
+      color: $black;
+    }
+  }
+}
+
+.image-container {
+  > span {
+    display: block !important;
+  }
+}
+
+.unblur {
+  animation: unblur 0.15s linear;
+}
+
+.react-player {
+  width: 100%;
+  height: 100%;
+
+  iframe,
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.contentContainer {
+  &.text-center {
+    .buttons {
+      justify-content: center;
+    }
+  }
+}
+
+.player-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  width: 100%;
+
+  .react-player {
+    > div,
+    iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 90% !important;
+      height: 90% !important;
+
+      @media screen and (min-width: ($xxl + 1)) {
+        width: 80% !important;
+        height: 80% !important;
+      }
+    }
+  }
+}
+
+.customIcon {
+  &.block {
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.banner-tags {
+  a {
+    @media screen and (min-width: ($lg)) {
+      transition-duration: 0.3s;
+      transition-timing-function: ease-in-out;
+    }
+    &:hover {
+      @media screen and (min-width: ($lg)) {
+        color: $red;
+      }
+    }
+  }
+}
+
+.search {
+  .image {
+    width: 100px;
+  }
+  .copy {
+    width: calc(100% - 120px);
+  }
+}
+
+.leaflet-container {
+  z-index: 1;
+}
+
+div {
+  &[data-rmiz-modal-overlay="visible"] {
+    background-color: $navy;
+    opacity: 0.9;
+  }
+}

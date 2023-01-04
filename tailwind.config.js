@@ -1,0 +1,121 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
+  theme: {
+    extend: {
+      width: {
+        riverImage: '612px',
+      },
+      height: {
+        riverImage: '612px',
+        video: '100%',
+      },
+      borderWidth: {
+        thin: '1px',
+      },
+      boxShadow: {
+        header: '0 0 30px -20px rgb(0 0 0 / 52%)',
+      },
+      maxWidth: {
+        xs: '360px',
+        sm: '480px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        xxl: '1440px',
+      },
+      margin: {
+        riverImage: '50px 0',
+      },
+      screens: {
+        xs: '360px',
+        sm: '480px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        xxl: '1440px',
+      },
+      top: {
+        header: '60px',
+      },
+      padding: {
+        header: '60px',
+        wrap: '0 40px',
+        wrapMobile: '0 20px',
+        video: '56.25%',
+        banner: '25%',
+        mobileVideo: '100%',
+      },
+      colors: {
+        overlay: 'rgba(0,0,0,0.5)',
+        white: {
+          100: '#fdfbf8',
+          200: '#fbf6f0',
+          300: '#f8f2e9',
+          400: '#f6ede1',
+          500: '#f4e9da',
+          600: '#c3baae',
+          700: '#928c83',
+          800: '#625d57',
+          900: '#312f2c',
+        },
+        red: {
+          100: '#fbdfdc',
+          200: '#f7beb8',
+          300: '#f49e95',
+          400: '#f07d71',
+          500: '#ec5d4e',
+          600: '#bd4a3e',
+          700: '#8e382f',
+          800: '#5e251f',
+          900: '#2f1310',
+        },
+        yellow: {
+          100: '#fef2db',
+          200: '#fee5b7',
+          300: '#fdd793',
+          400: '#fdca6f',
+          500: '#fcbd4b',
+          600: '#ca973c',
+          700: '#97712d',
+          800: '#654c1e',
+          900: '#32260f',
+        },
+        blue: {
+          100: '#def0fb',
+          200: '#bce1f8',
+          300: '#9bd3f4',
+          400: '#79c4f1',
+          500: '#58b5ed',
+          600: '#4691be',
+          700: '#356d8e',
+          800: '#23485f',
+          900: '#12242f',
+        },
+        black: {
+          100: '#d4d6dd',
+          200: '#a9adba',
+          300: '#7d8598',
+          400: '#525c75',
+          500: '#273353',
+          600: '#1f2942',
+          700: '#171f32',
+          800: '#101421',
+          900: '#080a11',
+        },
+      },
+      fontFamily: {
+        display:
+          'Poppins Extra Bold, Arial Black, Helvetica, BlinkMacSystemFont',
+        body: 'Poppins, Georgia, Courier New',
+        semibold: 'Poppins Semi Bold',
+        semibolditalic: 'Poppins Semi Bold Italic',
+        bold: 'Poppins Bold',
+      },
+    },
+  },
+  plugins: [],
+};

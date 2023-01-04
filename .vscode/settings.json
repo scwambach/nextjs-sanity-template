@@ -1,0 +1,23 @@
+{
+  "workbench.colorCustomizations": {
+    "titleBar.activeForeground": "#fff",
+    "titleBar.inactiveForeground": "#bbb",
+    "titleBar.activeBackground": "#39733f",
+    "titleBar.inactiveBackground": "#07964a"
+  },
+  "cSpell.words": [
+    "AAAAAACCCDEEEEEEEEIIIINNOOOOOORRSTUUUUUYY",
+    "ÁÄÂÀÃÅČÇĆĎÉĚËÈÊẼĔȆÍÌÎÏŇÑÓÖÒÔÕØŘŔŠŤÚŮÜÙÛÝŸ",
+    "fieldsets",
+    "groq",
+    "hotspot",
+    "lqip",
+    "meronex",
+    "plusplus",
+    "testid",
+    "textareas",
+    "Žáäâàãåčçćďéěëèêẽĕȇíìîïňñóöòôõøðřŕšťúůüùûýÿžþ",
+    "Zaaaaaacccdeeeeeeeeiiiinnooooooorrstuuuuuyyzb"
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

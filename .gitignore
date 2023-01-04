@@ -1,0 +1,8 @@
+node_modules
+dist
+.next
+.DS_Store
+package-lock.json
+.env*
+.vercel
+coverage

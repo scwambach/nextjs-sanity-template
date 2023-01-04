@@ -1,0 +1,35 @@
+.formCta {
+  .egg-shell,
+  .white {
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      height: calc(100% + 2px);
+      width: calc(100% + 2px);
+      top: 20px;
+      left: -20px;
+
+      @media screen and (max-width: ($lg - 1)) {
+        content: none;
+      }
+    }
+  }
+
+  .egg-shell {
+    &:after {
+      border: 1px solid $black;
+    }
+  }
+
+  .white {
+    &:after {
+      border: 1px solid $eggShell;
+    }
+  }
+
+  .form {
+    position: relative;
+    z-index: 2;
+  }
+}

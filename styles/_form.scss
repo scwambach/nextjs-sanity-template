@@ -1,0 +1,16 @@
+.form {
+  .checkbox,
+  .radio {
+    label {
+      span {
+        + input {
+          &:checked {
+            + [class$='-indicator'] {
+              background-color: $red;
+            }
+          }
+        }
+      }
+    }
+  }
+}

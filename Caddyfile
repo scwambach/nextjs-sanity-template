@@ -1,0 +1,3 @@
+devsdonating.localhost {
+  reverse_proxy localhost:3000
+}
