@@ -4,14 +4,15 @@ import {media} from 'sanity-plugin-media'
 import {schemaTypes} from './schemas'
 import {codeInput} from '@sanity/code-input'
 import {desk} from './desk'
+import {vars} from './env'
+
+const {SANITY_TITLE, SANITY_ID, SANITY_DATASET, REMOTE_URL, LOCAL_URL} = vars
 
 export default defineConfig({
   name: 'default',
-  title: 'Developers Donating Work',
-
-  projectId: 'ermbtigh',
-  dataset: 'production',
-
+  title: SANITY_TITLE,
+  projectId: SANITY_ID,
+  dataset: SANITY_DATASET,
   plugins: [desk, visionTool(), codeInput(), media()],
   document: {
     // @ts-ignore
@@ -20,10 +21,7 @@ export default defineConfig({
       // @ts-ignore
       const {client, dataset, document} = context
 
-      const remoteURL = 'https://developersdonatingwork.vercel.app'
-      const localURL = 'http://localhost:3000'
-
-      const appUrl = window.location.hostname === 'localhost' ? localURL : remoteURL
+      const appUrl = window.location.hostname === 'localhost' ? LOCAL_URL : REMOTE_URL
 
       if (document._type === 'page') {
         // you can now use async/await 🎉

@@ -3,6 +3,8 @@ dist
 .next
 .DS_Store
 package-lock.json
-.env*
+.env
+.env.*
 .vercel
 coverage
+env.ts
