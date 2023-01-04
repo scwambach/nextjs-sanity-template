@@ -1,0 +1,1 @@
+# nextjs-sanity-template
