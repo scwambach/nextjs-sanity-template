@@ -18,7 +18,7 @@ const PostCard = ({
   return (
     <article className={`relative${className ? ` ${className}` : ''}`}>
       {categories && (
-        <div className="absolute top-5 right-5 z-10 border-[1px] border-red-500 text-red-500 bg-white-500 pt-1 px-2">
+        <div className="absolute top-5 right-5 z-10 border-[1px] border-blue-500 text-blue-500 bg-white-500 pt-1 px-2">
           <LinkObject
             internalLink={{
               slug: { current: categories[0].slug },
@@ -58,7 +58,7 @@ const PostCard = ({
       <div className="pt-5">
         <p
           className={`text-lg lg:text-2xl font-bold lg:transition-all ${
-            hovering ? 'lg:text-red-500' : 'lg:text-black-900'
+            hovering ? 'lg:text-blue-500' : 'lg:text-black-900'
           }`}
           onMouseOver={() => {
             setHovering(true);
@@ -79,7 +79,7 @@ const PostCard = ({
           <p className="mt-2">
             by&nbsp;
             {parseAuthors(authors, false)}
-            <span className="text-red-500">
+            <span className="text-blue-500">
               <br />
               {dayjs(publishDate).format('MMM DD, YYYY')}
             </span>

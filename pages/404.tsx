@@ -5,7 +5,7 @@ const FourOhFourPage = () => {
     <div className="bg-white-500 py-20 h-screen flex flex-col justify-center">
       <div className="text-center">
         <div className="text-[30vw] font-bold leading-[1]">404</div>
-        <div className="text-red-500 font-bold text-3xl mb-2">
+        <div className="text-blue-500 font-bold text-3xl mb-2">
           Page Not Found
         </div>
         <p className="mb-10">

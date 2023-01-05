@@ -61,7 +61,7 @@ const PortableTextModule = ({ text, className, postLayout }: PortableProps) => {
               isBackground={false}
             />
             {node.caption && (
-              <figcaption className="block text-center w-full border-b-2 border-white-400 px-2 pt-1">
+              <figcaption className="block text-center w-full border-b-[1px] border-white-400 px-2 pt-1">
                 {node.caption}
               </figcaption>
             )}

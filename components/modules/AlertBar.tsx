@@ -10,7 +10,7 @@ const AlertBar = ({ content }: AlertBarProps) => {
     setAlerted(false);
   };
   return (
-    <AlertBox className="fixed text-center bottom-0 left-0 bg-red-500 w-full text-white-100">
+    <AlertBox className="fixed text-center bottom-0 left-0 bg-blue-500 w-full text-white-100">
       <PortableTextModule text={content} />
       <button
         className="absolute top-1/2 -translate-y-1/2 right-20"

@@ -47,7 +47,7 @@ const DataPage = function ({
             <div className="max-w-md">
               <HeadingElement
                 type="h1"
-                className="text-xl md:text-2xl lg:text-3xl text-red-500 font-display"
+                className="text-xl md:text-2xl lg:text-3xl text-blue-500 font-display"
               >
                 {data.title}
               </HeadingElement>

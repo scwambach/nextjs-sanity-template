@@ -29,7 +29,7 @@ const Quote = ({
                 ? ' mt-10 lg:mb-40 lg:mt-80'
                 : index > 0
                 ? ' mt-10 lg:mt-80'
-                : 'border-2 border-black-900'
+                : 'border-[1px] border-black-900'
             }${
               index % 2 == 0
                 ? ' text-black-900 bg-white-500'
@@ -43,7 +43,7 @@ const Quote = ({
       <div
         className={`copy w-full sm:w-1/2${
           !boxed && colorCutOff
-            ? ' bg-white-100 md:p-5 md:border-2 md:border-black-900'
+            ? ' bg-white-100 md:p-5 md:border-[1px] md:border-black-900'
             : ''
         }`}
       >
@@ -61,11 +61,11 @@ const Quote = ({
           text={quote}
           className={boxed ? `mt-5 lg:mt-10` : 'mt-10'}
         />
-        <p className="text-red-500 font-bold text-2xl mt-10">
+        <p className="text-blue-500 font-bold text-2xl mt-10">
           {person?.firstName && <>{person?.firstName}</>}
           {person?.lastName && <>&nbsp;{person?.lastName}</>}
         </p>
-        <p className="text-red-500 font-bold">
+        <p className="text-blue-500 font-bold">
           {person?.position && <>{person?.position}</>}
           {person?.position && person?.company && <>&nbsp;at&nbsp;</>}
           {person?.company && <>{person?.company.title}</>}

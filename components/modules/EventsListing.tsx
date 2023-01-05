@@ -56,7 +56,7 @@ const EventsListing = ({ events, past }: EventsListingProps) => {
                       {physicalLocation && (
                         <p>
                           <LinkObject
-                            className="hover:text-red-500 transition-all ease-in-out"
+                            className="hover:text-blue-500 transition-all ease-in-out"
                             url={`https://www.google.com/maps/place/${location.street} ${location.cityStateZip}`}
                             newTab
                           >
@@ -100,7 +100,7 @@ const EventsListing = ({ events, past }: EventsListingProps) => {
             )
           ) : (
             <>
-              <h2 className="text-red-500 font-bold text-3xl mb-5">
+              <h2 className="text-blue-500 font-bold text-3xl mb-5">
                 There currently aren&apos;t any events scheduled at the moment.
                 Please check back soon!
               </h2>
@@ -122,7 +122,7 @@ const EventsListing = ({ events, past }: EventsListingProps) => {
               <LinkObject
                 internalLink={{ slug: { current: '/events/past' } }}
                 copy="See Past Events"
-                className="uppercase text-2xl underline lg:hover:text-red-500 lg:transition-all"
+                className="uppercase text-2xl underline lg:hover:text-blue-500 lg:transition-all"
               />
             </div>
           )}

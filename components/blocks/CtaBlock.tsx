@@ -38,7 +38,7 @@ const CtaBlock = ({
           <div
             className={`${
               centered
-                ? ' border-2 bg-white-100 border-black-900 p-4 sm:p-8 md:p-14 lg:p-20'
+                ? ' border-[1px] bg-white-100 border-black-900 p-4 sm:p-8 md:p-14 lg:p-20'
                 : ''
             }`}
           >

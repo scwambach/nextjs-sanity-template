@@ -10,6 +10,7 @@ export const commonBlockProps = groq`
   defined(heading) => { heading },
   defined(subHeading) => { subHeading },
   defined(backgroundVideo) => { "backgroundVideo": backgroundVideo -> url },
+  defined(fontColor) => { fontColor },
   defined(backgroundColor) => { backgroundColor },
   defined(colorCutOff) => { colorCutOff },
   defined(colorHeight) => { colorHeight },

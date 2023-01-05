@@ -28,7 +28,7 @@ const MainNav = ({ menuOpen, setMenuOpen }: MainNavProps) => {
           key={_key}
           className={`menu-item ${
             index !== 0
-              ? 'border-t-2 border-t-white-300 lg:border-none'
+              ? 'border-t-[1px] border-t-white-300 lg:border-none'
               : undefined
           }`}
         >
@@ -69,7 +69,7 @@ const MainNav = ({ menuOpen, setMenuOpen }: MainNavProps) => {
           )}
         </li>
       ))}
-      <li className="lg:flex lg:flex-col lg:justify-center border-t-2 border-t-white-300 lg:border-none lg:px-0 px-5 lg:py-0 py-3">
+      <li className="lg:flex lg:flex-col lg:justify-center border-t-[1px] border-t-white-300 lg:border-none lg:px-0 px-5 lg:py-0 py-3">
         <button
           className="mt-"
           onClick={() => {

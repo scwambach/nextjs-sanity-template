@@ -47,7 +47,7 @@ const PageComponent = (props: C.BlockProps) => {
       }
       className={`${props.componentId || `component_${props._type}`} ${
         props.backgroundColor || 'bg-white-100'
-      }`}
+      } ${props.fontColor || 'text-black-900'}`}
       id={props.componentId || `component-${props._type}_${props.index}`}
     >
       <PageBlock {...props} index={props.index}>
@@ -64,13 +64,13 @@ const PageComponent = (props: C.BlockProps) => {
           <C.BgVideo backgroundVideo={props.backgroundVideo} inView={inView} />
         )}
         <div
-          className={`colorBack hidden md:block absolute top-0 left-0 w-full h-full${
+          className={`colorBack block absolute top-0 left-0 w-full h-full${
             props.backgroundImage || props.backgroundVideo ? ' opacity-50' : ''
           } ${
             props.colorCutOff
-              ? props.backgroundColor === 'bg-white-500'
-                ? `bg-white-100 h-1/4`
-                : `bg-white-500 h-1/4`
+              ? props.backgroundColor === 'bg-white-100'
+                ? `bg-black-900 h-1/4`
+                : `bg-white-100 h-1/4`
               : props.backgroundColor
           }`}
         />

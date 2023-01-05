@@ -29,18 +29,18 @@ const Heading = ({
   return (
     <Container maxWidth={maxWidth} edges={edges}>
       <div className="relative mb-10 lg:mb-20">
-        {subHeading && (
-          <p className="text-lg md:text-xl mb-5 text-red-500 font-display">
-            {noOrphans(subHeading)}
-          </p>
-        )}
         {heading && (
           <HeadingElement
             type={indexHeading(index)}
-            className="font-display text-xl md:text-2xl lg:text-3xl max-w-md"
+            className="font-display text-xl md:text-2xl lg:text-3xl max-w-md text-blue-500"
           >
             {noOrphans(heading)}
           </HeadingElement>
+        )}
+        {subHeading && (
+          <p className="text-lg md:text-xl font-display text-blue-500">
+            {noOrphans(subHeading)}
+          </p>
         )}
         {message && (
           <PortableTextModule

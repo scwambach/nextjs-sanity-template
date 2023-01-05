@@ -31,7 +31,7 @@ const PersonCard = ({
       />
       <div className="px-2 py-5 lg:py-5 lg:px-5">
         <p className="font-bold md:text-xl">{name}</p>
-        <p className="text-sm md:text-lg text-red-500 italic">{position}</p>
+        <p className="text-sm md:text-lg text-blue-500 italic">{position}</p>
         {description && <p className="mt-2 hidden lg:block ">{description}</p>}
         {socials && socials.length > 0 && (
           <div className="flex flex-wrap gap-5 mt-5 md:mt-10">

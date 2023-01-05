@@ -29,7 +29,7 @@ const PostPage = ({ doc, global }: Props) => {
         Time: ${doc.time}
         <br>
         <a
-          class="hover:text-red-500 transition-all ease-in-out"
+          class="hover:text-blue-500 transition-all ease-in-out"
           href='https://www.google.com/maps/place/${doc.location?.street} ${
           doc.location?.cityStateZip
         }'

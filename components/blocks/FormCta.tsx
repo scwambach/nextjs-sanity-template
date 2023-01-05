@@ -38,7 +38,7 @@ const FormCta = ({
       >
         <div className="sm:w-1/2">
           {subHeading && (
-            <p className="text-xl mb-5 text-red-500 font-display">
+            <p className="text-xl mb-5 text-blue-500 font-display">
               {subHeading}
             </p>
           )}
@@ -61,7 +61,7 @@ const FormCta = ({
         {form && (
           <div
             className={`sm:w-1/2 ${
-              colorCutOff ? 'border-2 border-black-900' : ''
+              colorCutOff ? 'border-[1px] border-black-900' : ''
             } -mt-10 lg:-mt-0 ${
               backgroundColor ? slugify(backgroundColor.toLowerCase()) : ''
             }`}

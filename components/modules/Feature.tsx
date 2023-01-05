@@ -21,9 +21,9 @@ const Feature = ({
     <div
       className={`feature ${
         boxed
-          ? ' border-2 border-black-900 px-4 lg:px-8 py-8 lg:py-10 '
+          ? ' border-[1px] border-black-900 px-4 lg:px-8 py-8 lg:py-10 '
           : colorCutOff
-          ? 'px-4 py-6 border-2 border-black-900'
+          ? 'px-4 py-6 border-[1px] border-black-900'
           : ''
       }${
         colorCutOff

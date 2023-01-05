@@ -15,7 +15,7 @@ const AffiliateCard = ({
       : undefined;
   return (
     <div
-      className={`flex items-center justify-center flex-col text-center border-2 border-black-900 px-3 lg:px-5 py-7 lg:py-10${
+      className={`flex items-center justify-center flex-col text-center px-3 lg:px-5 py-7 lg:py-10 bg-white-100 text-black-900${
         colorCutOff || hasBg ? ' bg-white-100' : ''
       }`}
     >
@@ -32,14 +32,14 @@ const AffiliateCard = ({
       </div>
       {links[0] ? (
         <LinkObject
-          className="text-red-500 font-bold text-xl my-5"
+          className="text-blue-500 font-bold text-xl my-5"
           newTab
           url={links[0].url}
         >
           {title}
         </LinkObject>
       ) : (
-        <p className="text-red-500 font-bold text-xl my-5">{title}</p>
+        <p className="text-blue-500 font-bold text-xl my-5">{title}</p>
       )}
       <p className="text-sm md:text-md">{description}</p>
     </div>

@@ -103,6 +103,7 @@ export interface BlockProps {
   _type: string;
   altLayout?: boolean;
   backgroundColor?: string;
+  fontColor?: string;
   backgroundImage?: ImageProps;
   backgroundVideo?: string;
   children?: any;

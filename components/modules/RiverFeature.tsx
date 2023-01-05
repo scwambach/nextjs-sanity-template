@@ -94,8 +94,8 @@ const RiverFeature = ({
               boxed
                 ? index % 2 == 0
                   ? 'text-yellow-500'
-                  : 'text-red-500'
-                : 'text-red-500'
+                  : 'text-blue-500'
+                : 'text-blue-500'
             } text-xl md:text-2xl lg:text-3xl font-bold md:mb-5`}
           >
             {noOrphans(title)}

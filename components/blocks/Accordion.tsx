@@ -48,17 +48,9 @@ const Accordion = ({
             return (
               <div key={_key}>
                 <button
-                  className={`${
-                    isActive
-                      ? backgroundColor === 'bg-white-100'
-                        ? 'bg-white-300'
-                        : 'bg-black-400'
-                      : backgroundColor === 'bg-white-100'
-                      ? 'bg-white-500'
-                      : 'bg-black-900'
-                  } ${
-                    backgroundColor === 'bg-white-100' ? '' : 'text-white-100 '
-                  }p-5 text-sm lg:text-lg font-bold flex lg:gap-10 items-center justify-between w-full text-left mb-5`}
+                  className={`py-5 border-b-[1px] transition-all ease-in-out duration-300 ${
+                    isActive ? 'border-b-blue-500' : 'border-b-black-900'
+                  } text-sm lg:text-lg font-bold flex lg:gap-10 items-center justify-between w-full text-left mb-5`}
                   onClick={() => {
                     if (isActive) {
                       setActiveIndex(undefined);
@@ -84,11 +76,7 @@ const Accordion = ({
                 >
                   <PortableTextModule
                     text={content}
-                    className={`${
-                      backgroundColor === 'bg-white-100'
-                        ? 'bg-white-300'
-                        : 'bg-black-400 text-white-100'
-                    } text-sm md:text-md p-5 mb-5`}
+                    className="bg-blue-500 text-white-100 text-sm md:text-md p-5 mb-5"
                   />
                 </div>
               </div>
