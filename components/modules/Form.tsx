@@ -134,12 +134,10 @@ const Form = ({
           </fieldset>
         )}
         {error && (
-          <p className="font-semibold text-2xl text-red-500">{errorMessage}</p>
+          <p className="font-bold text-2xl text-red-500">{errorMessage}</p>
         )}
         {success && (
-          <p className="font-semibold text-2xl text-green-700">
-            {thankYouMessage}
-          </p>
+          <p className="font-bold text-2xl text-green-700">{thankYouMessage}</p>
         )}
       </form>
     </FormContainer>

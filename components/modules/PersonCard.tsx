@@ -19,7 +19,7 @@ const PersonCard = ({
   const name = `${firstName}${lastName ? ` ${lastName}` : ''}`;
   const { windowWidth } = useContext(MainContext);
   return (
-    <div className="border-[1px] border-black-500 bg-white-100">
+    <div className="border-[1px] border-black-900 bg-white-100">
       <ProgressiveImage
         {...photo}
         alt={name}

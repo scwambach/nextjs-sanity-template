@@ -36,7 +36,7 @@ const ContactPage = ({ doc, form, global }: Props) => {
             <Form
               {...form}
               className="w-full lg:w-1/2"
-              formClassName="text-black-500 p-8 lg:p-12 bg-white-100"
+              formClassName="text-black-900 p-8 lg:p-12 bg-white-100"
             />
             <div className="w-full lg:w-1/2 flex flex-col justify-between">
               <div className="pb-8 font-bold">

@@ -15,17 +15,17 @@ const NavToggle = ({ menuOpen, setMenuOpen }: NavToggleProps) => {
       }}
     >
       <span
-        className={`bar transition-all block relative top-0 bg-black-500 h-1 w-full${
+        className={`bar transition-all block relative top-0 bg-black-900 h-1 w-full${
           menuOpen ? ' rotate-45 top-2' : ''
         }`}
       />
       <span
-        className={`bar transition-all block scale-100 bg-black-500 mt-1 h-1 w-full${
+        className={`bar transition-all block scale-100 bg-black-900 mt-1 h-1 w-full${
           menuOpen ? ' scale-0' : ''
         }`}
       />
       <span
-        className={`bar transition-all block relative top-0 bg-black-500 mt-1 h-1 w-full${
+        className={`bar transition-all block relative top-0 bg-black-900 mt-1 h-1 w-full${
           menuOpen ? ' -rotate-45 -top-2' : ''
         }`}
       />

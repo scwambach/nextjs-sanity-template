@@ -36,7 +36,7 @@ const Address = ({ small, noSoc, dark, className }: AddressProps) => {
       {contact.mainEmail && (
         <a href={`mailto:${contact.mainEmail}`}>email us</a>
       )}
-      {!noSoc && (
+      {!noSoc && socials && socials.length > 0 && (
         <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-10">
           {socials.map(({ icon, url, _key }) => (
             <LinkObject
@@ -46,7 +46,7 @@ const Address = ({ small, noSoc, dark, className }: AddressProps) => {
               copy={url}
               className={`border-thin lg:transition-all ${
                 dark
-                  ? 'border-black-500 p-3 lg:hover:bg-white-300'
+                  ? 'border-black-900 p-3 lg:hover:bg-white-300'
                   : 'border-white-500 p-3 lg:hover:bg-black-300'
               }`}
             >

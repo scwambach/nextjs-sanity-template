@@ -7,7 +7,7 @@ const Button = ({ children, className }: ButtonProps) => {
   return (
     <span
       data-testid="button"
-      className={`m-0 inline-block button text-center relative cursor-pointer border-thin border-black-500 bg-black-500 text-white-100 overflow-hidden${
+      className={`m-0 inline-block button text-center relative cursor-pointer border-thin border-black-900 bg-black-900 text-white-100 overflow-hidden${
         className ? ` ${className}` : ''
       }`}
     >

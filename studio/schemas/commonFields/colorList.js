@@ -9,7 +9,7 @@ export const colorList = (props = {}) => {
     options: {
       list: [
         {title: 'White', value: 'bg-white-100'},
-        {title: 'Egg Shell', value: 'bg-white-500'},
+        {title: 'Black', value: 'bg-black-900'},
       ],
     },
   }

@@ -187,10 +187,6 @@ export const desk = deskTool({
                           .title('Main Navigation')
                           .child(S.document().schemaType('navMenu').documentId('mainNavigation'))
                           .icon(AiFillCompass),
-                        S.listItem()
-                          .title('Footer Navigation')
-                          .child(S.document().schemaType('navMenu').documentId('footerNavigation'))
-                          .icon(AiFillCompass),
                       ])
                   )
                   .icon(AiFillCompass),

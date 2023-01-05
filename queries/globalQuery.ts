@@ -37,14 +37,6 @@ export const globalQuery = groq`
       }
     }
   },
-  "footerNavigation": *[_id == "footerNavigation"][0] {
-    items[] {
-      _key,
-      link {
-        ${linkObject}
-      }
-    }
-  },
   "search": *[_type == "event" && date >= $today && !(_id in path("drafts.**")) || _type == "page" && !(_id in path("drafts.**")) || _type == "dataPage" && !(_id in path("drafts.**")) || _type == "project" && !(_id in path("drafts.**")) || _type == "post" && !(_id in path("drafts.**"))] {
     _id,
     _type,

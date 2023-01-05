@@ -53,7 +53,7 @@ const Search = ({ items, setSearchOpen }: SearchProps) => {
   }, []);
   return (
     <div className="search fixed z-50 top-5 lg:top-28 left-0 w-full h-full">
-      <div className="fixed top-0 left-0 w-full h-full bg-black-500 opacity-90" />
+      <div className="fixed top-0 left-0 w-full h-full bg-black-900 opacity-90" />
       <button
         className="fixed top-5 right-5 text-white z-50"
         onClick={() => {
@@ -85,7 +85,7 @@ const Search = ({ items, setSearchOpen }: SearchProps) => {
             return (
               <div
                 key={result._id}
-                className="text-left border-t-[1px] border-black-500  bg-white text-black"
+                className="text-left border-t-[1px] border-black-900  bg-white text-black"
               >
                 <Link
                   href={pathSlug}
@@ -95,7 +95,7 @@ const Search = ({ items, setSearchOpen }: SearchProps) => {
                   }}
                 >
                   <span className="image flex flex-col justify-center">
-                    <img src={result.mainImage} />
+                    <img src={result.mainImage} alt={result.title} />
                   </span>
                   <span className="copy my-2">
                     <span className="block font-bold">{result.title}</span>

@@ -1,10 +1,10 @@
-import * as Icons from '@meronex/icons/si';
+import * as Icons from '@meronex/icons/si'
 
 export const DynamicIcon = (name) => {
-  const IconComponent = Icons[name];
+  const IconComponent = Icons[name]
 
-  return IconComponent;
-};
+  return IconComponent
+}
 
 export default {
   name: 'globalSettings',
@@ -46,6 +46,7 @@ export default {
       name: 'defaultOgImage',
       title: 'Default OG Image',
       type: 'image',
+      validation: (Rule) => Rule.required(),
       options: {
         hotspot: true,
       },
@@ -66,18 +67,18 @@ export default {
               type: 'string',
               options: {
                 list: [
-                  { title: 'facebook', value: 'SiFacebook' },
-                  { title: 'twitter', value: 'SiTwitter' },
-                  { title: 'youtube', value: 'SiYoutube' },
-                  { title: 'instagram', value: 'SiInstagram' },
-                  { title: 'linkedin', value: 'SiLinkedin' },
-                  { title: 'pinterest', value: 'SiPinterest' },
-                  { title: 'tiktok', value: 'SiTiktok' },
-                  { title: 'spotify', value: 'SiSpotify' },
-                  { title: 'venmo', value: 'SiVenmo' },
-                  { title: 'snapchat', value: 'SiSnapchat' },
-                  { title: 'twitch', value: 'SiTwitch' },
-                  { title: 'dribbble', value: 'SiDribbble' },
+                  {title: 'facebook', value: 'SiFacebook'},
+                  {title: 'twitter', value: 'SiTwitter'},
+                  {title: 'youtube', value: 'SiYoutube'},
+                  {title: 'instagram', value: 'SiInstagram'},
+                  {title: 'linkedin', value: 'SiLinkedin'},
+                  {title: 'pinterest', value: 'SiPinterest'},
+                  {title: 'tiktok', value: 'SiTiktok'},
+                  {title: 'spotify', value: 'SiSpotify'},
+                  {title: 'venmo', value: 'SiVenmo'},
+                  {title: 'snapchat', value: 'SiSnapchat'},
+                  {title: 'twitch', value: 'SiTwitch'},
+                  {title: 'dribbble', value: 'SiDribbble'},
                 ],
               },
             },
@@ -85,8 +86,7 @@ export default {
               title: 'URL',
               name: 'url',
               type: 'url',
-              description:
-                'Can be full URL or relative path (e.g. "/about") or email address.',
+              description: 'Can be full URL or relative path (e.g. "/about") or email address.',
               validation: (Rule) =>
                 Rule.uri({
                   allowRelative: true,
@@ -99,11 +99,11 @@ export default {
               icon: 'icon',
             },
             prepare(selection) {
-              const { title, icon } = selection;
+              const {title, icon} = selection
               return {
                 title,
                 media: DynamicIcon(icon),
-              };
+              }
             },
           },
         },
@@ -112,13 +112,13 @@ export default {
     {
       name: 'customIcon',
       title: 'Main Logo',
-      hidden: ({ parent }) => parent.iconImage,
+      hidden: ({parent}) => parent.iconImage,
       type: 'reference',
-      to: [{ type: 'svg' }],
+      to: [{type: 'svg'}],
     },
     {
       name: 'iconImage',
-      hidden: ({ parent }) => parent.customIcon,
+      hidden: ({parent}) => parent.customIcon,
       title: 'Main Logo Image',
       description: 'Use this only when a custom SVG is not an option.',
       type: 'image',
@@ -173,11 +173,10 @@ export default {
       name: 'customJs',
       title: 'Custom Javascript',
       type: 'code',
-      description:
-        'For advanced use only. Do NOT change unless you know what you are doing.',
+      description: 'For advanced use only. Do NOT change unless you know what you are doing.',
       options: {
         language: 'js',
       },
     },
   ],
-};
+}

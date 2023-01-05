@@ -60,7 +60,7 @@ const HeroBanner = ({
             {subHeading && (
               <p
                 className={`lg:text-xl mb-5 font-display ${
-                  largeType ? 'text-red-500' : 'text-black-500'
+                  largeType ? 'text-red-500' : 'text-black-900'
                 }`}
               >
                 {noOrphans(subHeading)}
@@ -70,7 +70,7 @@ const HeroBanner = ({
               type={indexHeading(index)}
               className={`font-display ${
                 largeType
-                  ? 'text-xl md:text-2xl lg:text-4xl text-black-500'
+                  ? 'text-xl md:text-2xl lg:text-4xl text-black-900'
                   : 'text-xl md:text-2xl lg:text-3xl text-red-500'
               }`}
             >

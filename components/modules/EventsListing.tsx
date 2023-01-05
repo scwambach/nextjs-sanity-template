@@ -39,7 +39,7 @@ const EventsListing = ({ events, past }: EventsListingProps) => {
                     key={_id}
                     className={`relative${index > 0 ? ' mt-20' : ''}`}
                   >
-                    <div className="datebox lg:absolute lg:top-0 lg:-left-[100px] bg-black-500 text-white-100 w-12 h-12 md:w-16 md:h-16 flex flex-col justify-center text-center font-display mb-2 lg:mb-0">
+                    <div className="datebox lg:absolute lg:top-0 lg:-left-[100px] bg-black-900 text-white-100 w-12 h-12 md:w-16 md:h-16 flex flex-col justify-center text-center font-display mb-2 lg:mb-0">
                       <p className="text-xs md:text-lg leading-[15px] md:leading-[25px]">
                         {dayjs(date).format('MMM')}
                       </p>
@@ -48,7 +48,7 @@ const EventsListing = ({ events, past }: EventsListingProps) => {
                       </p>
                     </div>
                     <div className="info">
-                      <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold">
+                      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
                         {title}
                       </h2>
                       <p>{dayjs(date).format('MMMM D, YYYY')}</p>
@@ -100,7 +100,7 @@ const EventsListing = ({ events, past }: EventsListingProps) => {
             )
           ) : (
             <>
-              <h2 className="text-red-500 font-semibold text-3xl mb-5">
+              <h2 className="text-red-500 font-bold text-3xl mb-5">
                 There currently aren&apos;t any events scheduled at the moment.
                 Please check back soon!
               </h2>

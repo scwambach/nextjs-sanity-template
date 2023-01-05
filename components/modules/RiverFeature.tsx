@@ -79,8 +79,8 @@ const RiverFeature = ({
           boxed
             ? `md:w-4/5 lg:w-3/5 px-5 lg:px-10 pt-28 ${
                 index % 2 == 0
-                  ? 'md:-mr-20 md:pr-24 lg:pr-36 bg-black-500 text-white-500'
-                  : 'md:-ml-20 md:pl-24 lg:pl-36 bg-white-500 text-black-500'
+                  ? 'md:-mr-20 md:pr-24 lg:pr-36 bg-black-900 text-white-500'
+                  : 'md:-ml-20 md:pl-24 lg:pl-36 bg-white-500 text-black-900'
               }`
             : `md:w-1/2 ${
                 index % 2 == 0 ? 'md:pr-10 lg:pr-20' : 'md:pl-10 lg:pl-20'
@@ -96,7 +96,7 @@ const RiverFeature = ({
                   ? 'text-yellow-500'
                   : 'text-red-500'
                 : 'text-red-500'
-            } text-xl md:text-2xl lg:text-3xl font-semibold md:mb-5`}
+            } text-xl md:text-2xl lg:text-3xl font-bold md:mb-5`}
           >
             {noOrphans(title)}
           </HeadingElement>

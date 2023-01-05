@@ -18,7 +18,7 @@ const PageNav = ({ number, className, limit, path, count }: PageNavProps) => {
         itemsCountPerPage={limit}
         innerClass="flex justify-start"
         linkClass="mr-4 border-2 block border-white pt-1 px-3 font-headingBold lg:hover:bg-white lg:hover:text-black cursor-pointer"
-        activeLinkClass="bg-black-500 text-white-100"
+        activeLinkClass="bg-black-900 text-white-100"
         linkClassFirst="hidden"
         linkClassPrev="hidden"
         linkClassNext="hidden"

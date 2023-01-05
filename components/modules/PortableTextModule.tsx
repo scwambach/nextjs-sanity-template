@@ -16,7 +16,7 @@ const BlockRenderer = (props) => {
   const { style = 'normal' } = node;
   if (style === 'blockquote') {
     return (
-      <blockquote className="text-4xl border-l-4 border-black-500 pl-10">
+      <blockquote className="text-4xl border-l-4 border-black-900 pl-10">
         <FaQuoteLeft size={40} className="mb-3" />
         {children}
       </blockquote>
@@ -71,7 +71,7 @@ const PortableTextModule = ({ text, className, postLayout }: PortableProps) => {
       quote: ({ node }) => (
         <figure>
           <blockquote
-            className="text-4xl border-l-4 border-black-500 pl-10"
+            className="text-4xl border-l-4 border-black-900 pl-10"
             cite={node.citeUrl || undefined}
           >
             <FaQuoteLeft size={40} className="mb-3" />

@@ -4,7 +4,6 @@ export const mainImage = {
   type: 'image',
   description: 'The image that is shown when shared on social media platforms',
   fieldset: 'meta',
-  validation: (Rule) => Rule.required(),
   options: {
     hotspot: true,
   },

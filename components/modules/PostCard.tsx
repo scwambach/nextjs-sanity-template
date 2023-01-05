@@ -58,7 +58,7 @@ const PostCard = ({
       <div className="pt-5">
         <p
           className={`text-lg lg:text-2xl font-bold lg:transition-all ${
-            hovering ? 'lg:text-red-500' : 'lg:text-black-500'
+            hovering ? 'lg:text-red-500' : 'lg:text-black-900'
           }`}
           onMouseOver={() => {
             setHovering(true);

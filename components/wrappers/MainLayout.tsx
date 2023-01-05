@@ -98,7 +98,7 @@ const MainLayout = ({
       </a>
 
       <Header alerted={alerted} />
-      <main id="main-content" className="pt-header text-black-500 font-body">
+      <main id="main-content" className="pt-header text-black-900 font-body">
         {children}
       </main>
       <Footer />

@@ -61,14 +61,14 @@ const FormCta = ({
         {form && (
           <div
             className={`sm:w-1/2 ${
-              colorCutOff ? 'border-2 border-black-500' : ''
+              colorCutOff ? 'border-2 border-black-900' : ''
             } -mt-10 lg:-mt-0 ${
               backgroundColor ? slugify(backgroundColor.toLowerCase()) : ''
             }`}
           >
             <Form
               {...form}
-              className={`text-black-500 p-4 md:p-8 lg:p-12  ${
+              className={`text-black-900 p-4 md:p-8 lg:p-12  ${
                 backgroundColor === 'bg-white-100'
                   ? 'bg-white-500'
                   : 'bg-white-100'

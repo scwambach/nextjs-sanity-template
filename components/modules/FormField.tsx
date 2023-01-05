@@ -28,9 +28,7 @@ const FormField = ({
           className={`${type} block mb-8`}
           htmlFor={fieldId}
         >
-          <span
-            className={`text-xl font-semibold${hideLabel ? ' hidden' : ''}`}
-          >
+          <span className={`text-xl font-bold${hideLabel ? ' hidden' : ''}`}>
             {label}
           </span>
           {description && <p>{description}</p>}
@@ -48,7 +46,7 @@ const FormField = ({
         </label>
       ) : type === 'checkbox' || type === 'radio' ? (
         <div data-testid="form-field-choice" className={`${type} block mb-8`}>
-          <p className={`text-xl font-semibold${hideLabel ? ' hidden' : ''}`}>
+          <p className={`text-xl font-bold${hideLabel ? ' hidden' : ''}`}>
             {label}
           </p>
           {description && <p>{description}</p>}
@@ -70,7 +68,7 @@ const FormField = ({
                       className="h-0 w-0 overflow-hidden opacity-0"
                     />
                     <div
-                      className={`flex items-center content-center justify-center w-5 h-5 bg-white-100 border-thin border-black-500 ${
+                      className={`flex items-center content-center justify-center w-5 h-5 bg-white-100 border-thin border-black-900 ${
                         type === 'radio' ? 'rounded-full ' : ''
                       }${type}-indicator`}
                     >
@@ -92,9 +90,7 @@ const FormField = ({
           className={`${type} block mb-8`}
           htmlFor={fieldId}
         >
-          <span
-            className={`text-xl font-semiboldå${hideLabel ? ' hidden' : ''}`}
-          >
+          <span className={`text-xl font-boldå${hideLabel ? ' hidden' : ''}`}>
             {label}
           </span>
           {description && <p>{description}</p>}

@@ -55,7 +55,7 @@ const Accordion = ({
                         : 'bg-black-400'
                       : backgroundColor === 'bg-white-100'
                       ? 'bg-white-500'
-                      : 'bg-black-500'
+                      : 'bg-black-900'
                   } ${
                     backgroundColor === 'bg-white-100' ? '' : 'text-white-100 '
                   }p-5 text-sm lg:text-lg font-bold flex lg:gap-10 items-center justify-between w-full text-left mb-5`}
