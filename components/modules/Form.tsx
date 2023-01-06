@@ -34,7 +34,7 @@ const Form = ({
     const inputs = form.querySelectorAll('input');
     const textareas = form.querySelectorAll('textarea');
 
-    let serial = {
+    const serial = {
       subject,
       recipient,
       currentPath: window.location.pathname,
@@ -44,7 +44,7 @@ const Form = ({
       serial[input.name.split('_')[0]] = input.value;
     });
 
-    textareas.forEach((input, index) => {
+    textareas.forEach((input) => {
       serial[input.name.split('_')[0]] = input.value;
     });
 

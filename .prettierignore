@@ -1,1 +1,8 @@
-emails/*
+studio
+.*
+coverage
+*.d.ts
+*.config.js
+*.setup.js
+*.json
+README.md

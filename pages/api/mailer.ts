@@ -32,7 +32,7 @@ export default async (req: any, res: any) => {
       }
     });
 
-    let transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: process.env.SMTP_PORT,
       secure: true,
@@ -42,15 +42,16 @@ export default async (req: any, res: any) => {
       },
     });
 
-    transporter.verify(function (error: any, _success: any) {
+    transporter.verify(function (error: any, success: any) {
       if (error) {
         console.log(error);
-      } else {
+      }
+      if (success) {
         console.log('Server is ready to take our messages');
       }
     });
 
-    let info = await transporter.sendMail({
+    const info = await transporter.sendMail({
       from: '"Developers Donating Work" <scott@scottwamba.ch>',
       to: recipient,
       subject,

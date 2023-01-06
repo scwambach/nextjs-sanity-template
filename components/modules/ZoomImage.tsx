@@ -1,9 +1,9 @@
-import { ProgressiveImage } from '@components';
+import { ImageProps, ProgressiveImage } from '@components';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 
 interface ZoomImageProps {
-  image: any;
+  image: ImageProps;
 }
 
 const ZoomImage = ({ image }: ZoomImageProps) => {
