@@ -23,7 +23,6 @@ const Accordion = ({
   index,
   items,
   subHeading,
-  backgroundColor,
 }: AccordionProps) => {
   const { windowWidth } = useContext(MainContext);
   const [activeIndex, setActiveIndex] = useState<number | undefined>(undefined);
