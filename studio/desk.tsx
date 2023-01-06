@@ -18,11 +18,11 @@ import MdLocalMovies from '@meronex/icons/md/MdLocalMovies'
 import MdcMovieOpenOutline from '@meronex/icons/mdc/MdcMovieOpenOutline'
 import EnGlobe from '@meronex/icons/en/EnGlobe'
 import MdEvent from '@meronex/icons/md/MdEvent'
+import {vars} from './env'
 
-const remoteURL = 'https://developersdonatingwork.vercel.app'
-const localURL = 'http://localhost:3000'
+const {REMOTE_URL, LOCAL_URL} = vars
 
-const appUrl = window.location.hostname === 'localhost' ? localURL : remoteURL
+const appUrl = window.location.hostname === 'localhost' ? LOCAL_URL : REMOTE_URL
 
 const PreviewModule = ({url}) => (
   <div className="container" style={{height: '100%'}}>
