@@ -91,7 +91,7 @@ const MainLayout = ({
       <DocHead site={site} />
       <Seo data={data} global={{ site }} />
       <a
-        className="skip-to-content absolute -translate-y-[150%] transition-all ease-in-out duration-150 focus:translate-y-0 focus:z-30 bg-white-100 text-black-900 rounded-md p-2"
+        className="skip-to-content absolute -translate-y-[150%] transition-all ease-in-out duration-150 focus:translate-y-0 focus:z-[99] bg-white-100 text-black-900 rounded-md p-2"
         href="#main-content"
       >
         Skip to content
