@@ -12,12 +12,12 @@ yarn check-lint ||
   false;
 )
 
-# echo 'So far so good! Testing the build now.'
+echo 'So far so good! Testing the build now.'
 
-# npm run build ||
-# (
-#   echo 'Next build failed: View the errors above to see why.'
-#   false;
-# )
+npm run build ||
+(
+  echo 'Next build failed: View the errors above to see why.'
+  false;
+)
 
 echo 'All looks good! Committing now.'
