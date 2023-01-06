@@ -70,7 +70,7 @@ const FormCta = ({
               {...form}
               className={`text-black-900 p-4 md:p-8 lg:p-12  ${
                 backgroundColor === 'bg-white-100'
-                  ? 'bg-white-500'
+                  ? 'bg-blue-500'
                   : 'bg-white-100'
               }`}
             />

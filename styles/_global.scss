@@ -1,5 +1,5 @@
 body {
-  background-color: $navy;
+  background-color: $violet;
 
   * {
     &::selection {
@@ -101,7 +101,7 @@ body {
 
 div {
   &[data-rmiz-modal-overlay="visible"] {
-    background-color: $navy;
+    background-color: $violet;
     opacity: 0.9;
   }
 }

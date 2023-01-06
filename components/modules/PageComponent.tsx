@@ -47,7 +47,7 @@ const PageComponent = (props: C.BlockProps) => {
       }
       className={`${props.componentId || `component_${props._type}`} ${
         props.backgroundColor || 'bg-white-100'
-      } ${props.fontColor || 'text-black-900'}`}
+      }`}
       id={props.componentId || `component-${props._type}_${props.index}`}
     >
       <PageBlock {...props} index={props.index}>
@@ -69,7 +69,7 @@ const PageComponent = (props: C.BlockProps) => {
           } ${
             props.colorCutOff
               ? props.backgroundColor === 'bg-white-100'
-                ? `bg-black-900 h-1/4`
+                ? `bg-blue-500 h-1/4`
                 : `bg-white-100 h-1/4`
               : props.backgroundColor
           }`}

@@ -1,6 +1,6 @@
 export {backgroundColor} from './backgroundColor'
 export {blockContent} from './blockContent'
-export {colorList, fontColorList} from './colorList'
+export {colorList} from './colorList'
 export {componentFields} from './componentFields'
 export {componentFieldsets} from './componentFieldsets'
 export {fieldSets} from './fieldsets'

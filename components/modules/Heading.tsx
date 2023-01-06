@@ -32,13 +32,13 @@ const Heading = ({
         {heading && (
           <HeadingElement
             type={indexHeading(index)}
-            className="font-display text-xl md:text-2xl lg:text-3xl max-w-md text-blue-500"
+            className="font-display text-xl md:text-2xl lg:text-3xl max-w-md"
           >
             {noOrphans(heading)}
           </HeadingElement>
         )}
         {subHeading && (
-          <p className="text-lg md:text-xl font-display text-blue-500">
+          <p className="text-lg md:text-xl font-display">
             {noOrphans(subHeading)}
           </p>
         )}

@@ -28,7 +28,7 @@ const Feature = ({
       }${
         colorCutOff
           ? backgroundColor === 'bg-white-100'
-            ? ' bg-white-500'
+            ? ' bg-blue-500'
             : ' bg-white-100'
           : ''
       }`}

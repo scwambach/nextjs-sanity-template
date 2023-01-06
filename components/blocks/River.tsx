@@ -18,12 +18,10 @@ export interface RiverFeatureProps {
   links?: LinkProps[];
 }
 interface RiverProps extends BlockProps {
-  boxed?: boolean;
   features?: RiverFeatureProps[];
 }
 
 const River = ({
-  boxed,
   children,
   className,
   features,
@@ -50,7 +48,6 @@ const River = ({
           (feature, featureIndex) =>
             feature && (
               <RiverFeature
-                boxed={boxed}
                 index={featureIndex}
                 parentIndex={heading ? index + 2 : index + 1}
                 feature={feature}

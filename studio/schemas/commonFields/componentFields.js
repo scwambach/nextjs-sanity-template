@@ -1,4 +1,4 @@
-import {image, colorList, styleSettings, fontColorList} from '.'
+import {image, colorList, styleSettings} from '.'
 
 export const componentFields = () => {
   return [
@@ -13,13 +13,6 @@ export const componentFields = () => {
       ...colorList({
         name: 'backgroundColor',
         title: 'Background Color',
-        fieldset: 'settings',
-      }),
-    },
-    {
-      ...fontColorList({
-        name: 'fontColor',
-        title: 'Font Color',
         fieldset: 'settings',
       }),
     },

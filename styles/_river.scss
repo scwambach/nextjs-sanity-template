@@ -17,7 +17,7 @@
           position: absolute;
           height: calc(100% + 2px);
           width: calc(100% + 2px);
-          border: 1px solid $eggShell;
+          border: 1px solid $white;
           top: -1px;
           left: -1px;
 
@@ -36,7 +36,7 @@
       &:nth-child(2n) {
         .image {
           &:before {
-            border: 1px solid $navy;
+            border: 1px solid $violet;
 
             @media screen and (min-width: ($lg)) {
               top: 20px;

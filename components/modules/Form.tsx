@@ -124,7 +124,7 @@ const Form = ({
                     <Spinner
                       className="absolute -left-5 top-[2px]"
                       size={17}
-                      color={colors.eggShell}
+                      color={colors.white}
                     />
                   )}
                   {submitButtonCopy}

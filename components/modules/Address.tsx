@@ -47,13 +47,13 @@ const Address = ({ small, noSoc, dark, className }: AddressProps) => {
               className={`border-thin lg:transition-all ${
                 dark
                   ? 'border-black-900 p-3 lg:hover:bg-white-300'
-                  : 'border-white-500 p-3 lg:hover:bg-black-300'
+                  : 'border-blue-500 p-3 lg:hover:bg-black-300'
               }`}
             >
               <DynamicIcon
                 name={icon}
                 size={30}
-                color={dark ? colors.black : colors.eggShell}
+                color={dark ? colors.black : colors.white}
               />
             </LinkObject>
           ))}

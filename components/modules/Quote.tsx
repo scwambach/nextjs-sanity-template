@@ -51,9 +51,9 @@ const Quote = ({
           color={
             boxed
               ? index % 2 == 0
-                ? colors.navy
-                : colors.eggShell
-              : colors.navy
+                ? colors.black
+                : colors.white
+              : colors.black
           }
           size={boxed ? (windowWidth < breakpoints.lg ? 30 : 60) : 60}
         />
