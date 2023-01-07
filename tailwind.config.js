@@ -11,6 +11,7 @@ module.exports = {
       },
       height: {
         riverImage: '612px',
+        fullScreen: 'calc(100vh - 60px)',
         video: '100%',
       },
       borderWidth: {
