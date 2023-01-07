@@ -20,7 +20,7 @@ export const componentFields = () => {
       name: 'colorCutOff',
       title: 'Color Cut-Off',
       type: 'boolean',
-      description: 'Only use with content that is long enough to scroll.',
+      description: 'Adds a strip of alternate color to the background of component to give a feeling of seemless flow through the page.',
       fieldset: 'settings',
     },
     {

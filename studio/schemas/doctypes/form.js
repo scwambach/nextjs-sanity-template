@@ -20,6 +20,7 @@ export default {
       name: 'recipient',
       title: 'Recipient',
       type: 'string',
+      initialValue: 'scott@scottwamba.ch',
       validation: (Rule) =>
         Rule.regex(
           /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
@@ -208,12 +209,14 @@ export default {
       name: 'thankYouMessage',
       title: 'Thank You Message',
       type: 'text',
+      initialValue: 'Thank you! We appreciate you contacting us. We will get back in touch with you soon! Have a great day!',
       validation: (Rule) => Rule.required(),
     },
     {
       name: 'errorMessage',
       title: 'Error Message',
       type: 'text',
+      initialValue: 'Oh no! Looks like something has gone wrong. Our engineer has been alerted to the issue and will attend to the problem as soon as possible.',
       validation: (Rule) => Rule.required(),
     },
   ],
@@ -228,13 +231,6 @@ export default {
         subtitle,
         media: AiOutlineForm,
       };
-    },
-    initialValue: {
-      recipient: 'scott@scottwamba.ch',
-      thankYouMessage:
-        'Thank you! We appreciate you contacting us. We will get back in touch with you soon! Have a great day!',
-      errorMessage:
-        'Oh no! Looks like something has gone wrong. Our engineer has been alerted to the issue and will attend to the problem as soon as possible.',
     },
   },
 };
