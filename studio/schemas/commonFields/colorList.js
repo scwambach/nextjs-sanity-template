@@ -6,6 +6,8 @@ export const colorList = (props = {}) => {
     fieldset: props.fieldset || null,
     description: props.description || null,
     hidden: props.hidden,
+    validation: (Rule) => Rule.required(),
+    initialValue: 'bg-white-100',
     options: {
       list: [
         {title: 'White', value: 'bg-white-100'},
