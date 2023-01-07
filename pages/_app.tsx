@@ -8,7 +8,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <NextNprogress
-        color={colors.red}
+        color={colors.green}
         options={{
           easing: 'ease',
           speed: 500,

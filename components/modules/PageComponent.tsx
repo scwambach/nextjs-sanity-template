@@ -51,7 +51,7 @@ const PageComponent = (props: C.BlockProps) => {
       id={props.componentId || `component-${props._type}_${props.index}`}
     >
       <PageBlock {...props} index={props.index}>
-        {props.backgroundImage && (
+        {props.backgroundImage && !props.colorCutOff && (
           <C.ProgressiveImage
             alt={`Background Image for block ${props._type}_${props.index}`}
             {...props.backgroundImage}
@@ -60,12 +60,15 @@ const PageComponent = (props: C.BlockProps) => {
             priority={props.index === 0}
           />
         )}
-        {props.backgroundVideo && hasWindow && (
+        {props.backgroundVideo && !props.colorCutOff && hasWindow && (
           <C.BgVideo backgroundVideo={props.backgroundVideo} inView={inView} />
         )}
         <div
           className={`colorBack block absolute top-0 left-0 w-full h-full${
-            props.backgroundImage || props.backgroundVideo ? ' opacity-50' : ''
+            (props.backgroundImage || props.backgroundVideo) &&
+            !props.colorCutOff
+              ? ' opacity-50'
+              : ''
           } ${
             props.colorCutOff
               ? props.backgroundColor === 'bg-white-100'

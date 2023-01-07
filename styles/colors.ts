@@ -1,9 +1,11 @@
 export const colors = {
-  white: '#fdfbf8',
-  black: '#080a11',
+  white: '#fffefe',
+  black: '#0a0a0a',
   red: '#ec5d4e',
-  yellow: '#fcbd4b',
+  orange: '#ff9327',
+  yellow: '#ffe32a',
+  green: '#00ad00',
   blue: '#58b5ed',
-  navy: '#273353',
-  eggShell: '#f4e9da',
+  indigo: '#a351e0',
+  violet: '#e051cc',
 };

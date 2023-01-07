@@ -6,6 +6,7 @@ export const image = (props = {}) => {
     fieldset: props.fieldset,
     description: props.description,
     validation: props.required ? (Rule) => Rule.required() : null,
+    hidden: props.hidden,
     options: {
       hotspot: true,
     },
