@@ -187,6 +187,7 @@ export interface SiteProps {
   iconImage?: ImageProps;
   customIcon?: string;
   contact?: ContactProps;
+  enableSearch?: boolean;
 }
 
 export interface NavProps {
@@ -280,4 +281,18 @@ export interface EventProps {
   physicalLocation?: boolean;
   time?: string;
   links?: LinkProps[];
+}
+
+export interface ProgressiveImageProps extends ImageProps {
+  alt: string;
+  className?: string;
+  imgHeight?: number;
+  imgWidth?: number;
+  isBackground?: boolean;
+  mobileCrop?: boolean | 'squared';
+  overrideSize?: boolean;
+  priority?: boolean;
+  quality?: number;
+  thin?: boolean;
+  title?: string;
 }

@@ -1,23 +1,9 @@
 import { useContext, useState } from 'react';
 import { useNextSanityImage } from 'next-sanity-image';
 import Image from 'next/legacy/image';
-import { ImageProps, MainContext } from '@components';
+import { ProgressiveImageProps, MainContext } from '@components';
 import { breakpoints } from '@styles';
 import { getClient, newRatio } from '@utils';
-
-interface ProgressiveImageProps extends ImageProps {
-  alt: string;
-  className?: string;
-  imgHeight?: number;
-  imgWidth?: number;
-  isBackground?: boolean;
-  mobileCrop?: boolean | 'squared';
-  overrideSize?: boolean;
-  priority?: boolean;
-  quality?: number;
-  thin?: boolean;
-  title?: string;
-}
 
 const ProgressiveImage = ({
   alt = null,
@@ -78,7 +64,7 @@ const ProgressiveImage = ({
         .fit('clip');
     }
 
-    if (mobileCrop) {
+    if (mobileCrop && isBackground) {
       if (windowWidth < breakpoints.sm) {
         return imageUrlBuilder
           .width(breakpoints.sm)
@@ -103,6 +89,31 @@ const ProgressiveImage = ({
         return imageUrlBuilder
           .width(imgWidth + 600)
           .height(900)
+          .quality(quality)
+          .fit('clip');
+      }
+
+      return imageUrlBuilder.width(imgWidth).quality(quality);
+    }
+
+    if (mobileCrop && !isBackground) {
+      if (windowWidth < breakpoints.sm) {
+        return imageUrlBuilder
+          .width(breakpoints.sm)
+          .quality(quality)
+          .fit('clip');
+      }
+
+      if (windowWidth < breakpoints.md) {
+        return imageUrlBuilder
+          .width(breakpoints.md)
+          .quality(quality)
+          .fit('clip');
+      }
+
+      if (windowWidth > 2000) {
+        return imageUrlBuilder
+          .width(imgWidth + 600)
           .quality(quality)
           .fit('clip');
       }

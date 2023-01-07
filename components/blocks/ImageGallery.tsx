@@ -1,8 +1,8 @@
-import { BlockProps, Container, Heading } from '@components';
+import { BlockProps, Container, Heading, MainContext } from '@components';
 import { breakpoints } from '@styles';
-import { ZoomImage } from 'components/modules/ZoomImage';
+import { useContext } from 'react';
+import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
-
 interface ImageGalleryProps extends BlockProps {
   images?: any[];
 }
@@ -15,6 +15,7 @@ const ImageGallery = ({
   images,
   subHeading,
 }: ImageGalleryProps) => {
+  const { windowWidth } = useContext(MainContext);
   const headingProps = {
     heading,
     index,
@@ -33,7 +34,20 @@ const ImageGallery = ({
         <Container maxWidth={breakpoints.xl}>
           <div className="grid xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-5">
             {images.map((image) => (
-              <ZoomImage key={image._key} image={image} />
+              <Zoom
+                key={image._key}
+                zoomImg={{
+                  alt: image.alt,
+                  src: image.url + '?w=1000&h=700&fit=crop',
+                }}
+                zoomMargin={windowWidth > breakpoints.lg ? 120 : 20}
+              >
+                <img
+                  src={image.url + '?w=500&h=350&fit=crop'}
+                  loading="lazy"
+                  alt={image.alt}
+                />
+              </Zoom>
             ))}
           </div>
         </Container>

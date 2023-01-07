@@ -52,7 +52,6 @@ export { RiverFeature } from './modules/RiverFeature';
 export { Search } from './modules/Search';
 export { Spinner } from './modules/Spinner';
 export { VideoModal } from './modules/VideoModal';
-export { ZoomImage } from './modules/ZoomImage';
 
 export { PostList } from './docs/PostList';
 
@@ -78,6 +77,7 @@ export type {
   NavProps,
   PersonCardProps,
   PostCardProps,
+  ProgressiveImageProps,
   SearchItem,
   SiteProps,
 } from './modules/CommonInterface';
