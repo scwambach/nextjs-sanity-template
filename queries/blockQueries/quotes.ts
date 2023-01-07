@@ -5,7 +5,6 @@ import { commonBlockProps } from './common';
 export const quotes = groq`
 _type == "quotes" => {
   ${commonBlockProps},
-  defined(boxed) => { boxed },
   quotes[] -> {
     _id,
     person -> {

@@ -12,6 +12,7 @@ import { indexHeading, noOrphans } from '@utils';
 
 interface HeroBannerProps extends BlockProps {
   links?: LinkProps[];
+  fullScreen?: boolean;
   message?: any;
   alignment?: 'left' | 'right' | 'center';
 }
@@ -20,6 +21,7 @@ const HeroBanner = ({
   alignment,
   children,
   className,
+  fullScreen,
   heading,
   index,
   links = [],
@@ -29,7 +31,11 @@ const HeroBanner = ({
   return (
     <div className={`heroBanner relative${className ? ` ${className}` : ''}`}>
       {children}
-      <div className="relative py-12 md:py-20 md:max-h-[600px] md:h-[80vh] lg:flex lg:flex-col lg:justify-center">
+      <div
+        className={`relative py-12 sm:py-16 md:py-20${
+          fullScreen ? ' md:max-h-[800px] md:h-fullScreen' : ''
+        } md:flex md:flex-col md:justify-center`}
+      >
         <Container maxWidth={breakpoints.xl}>
           <div
             className={`flex flex-col justify-center${

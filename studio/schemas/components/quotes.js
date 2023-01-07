@@ -9,12 +9,6 @@ export default {
   fields: [
     ...componentFields(),
     {
-      name: 'boxed',
-      title: 'Boxed',
-      fieldset: 'settings',
-      type: 'boolean',
-    },
-    {
       name: 'quotes',
       title: 'Quotes',
       type: 'array',

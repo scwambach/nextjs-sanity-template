@@ -29,7 +29,7 @@ const PersonCard = ({
         width={600}
         className="w-full"
       />
-      <div className="py-5 lg:py-5">
+      <div className="p-5 shadow-md shadow-black-100 bg-white-100">
         <p className="font-bold md:text-xl">{name}</p>
         <p className="text-sm md:text-lg text-blue-500 italic">{position}</p>
         {description && <p className="mt-2 hidden lg:block ">{description}</p>}

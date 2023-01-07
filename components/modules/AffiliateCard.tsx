@@ -15,7 +15,7 @@ const AffiliateCard = ({
       : undefined;
   return (
     <div
-      className={`flex items-center justify-center flex-col text-center px-3 lg:px-5 py-7 lg:py-10 bg-white-100 text-black-900${
+      className={`flex items-center shadow-md shadow-black-100 justify-center flex-col text-center px-3 lg:px-5 py-7 lg:py-10 bg-white-100 text-black-900${
         colorCutOff || hasBg ? ' bg-white-100' : ''
       }`}
     >

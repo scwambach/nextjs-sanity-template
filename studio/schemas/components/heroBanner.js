@@ -17,6 +17,12 @@ export default {
       }),
     },
     {
+      name: 'fullScreen',
+      title: 'Full Screen',
+      type: 'boolean',
+      fieldset: 'settings'
+    },
+    {
       name: 'alignment',
       title: 'Alignment',
       type: 'string',

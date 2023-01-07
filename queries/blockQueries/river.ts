@@ -5,7 +5,6 @@ import { commonBlockProps, linkObject } from './common';
 export const river = groq`
 _type == "river" => {
   ${commonBlockProps},
-  boxed,
   features[] {
     _key,
     defined(title) => { title },

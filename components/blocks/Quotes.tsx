@@ -26,12 +26,10 @@ export interface QuoteProps {
 }
 
 interface QuotesProps extends BlockProps {
-  boxed?: boolean;
   quotes: QuoteProps[];
 }
 
 const Quotes = ({
-  boxed,
   children,
   className,
   colorCutOff,
@@ -64,7 +62,6 @@ const Quotes = ({
                 key={quote._id}
                 index={index}
                 colorCutOff={colorCutOff}
-                boxed={boxed}
                 length={quotes?.length}
               />
             )
