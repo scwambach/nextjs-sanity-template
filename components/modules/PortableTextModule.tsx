@@ -2,8 +2,7 @@ import Link from 'next/link';
 import { FaQuoteLeft } from '@meronex/icons/fa';
 import BlockContent from '@sanity/block-content-to-react';
 import styled from 'styled-components';
-import { ProgressiveImage } from '@components';
-import { breakpoints } from '@styles';
+import { ZoomImage } from '@components';
 
 interface PortableProps {
   text?: any[];
@@ -55,11 +54,7 @@ const PortableTextModule = ({ text, className, postLayout }: PortableProps) => {
       image: ({ node }) => (
         <div className={postLayout ? `lg:-mx-32 my-4 md:my-8` : undefined}>
           <figure>
-            <ProgressiveImage
-              {...node}
-              imgWidth={breakpoints.lg}
-              isBackground={false}
-            />
+            <ZoomImage image={node} />
             {node.caption && (
               <figcaption className="block text-center w-full border-b-[1px] border-white-400 px-2 pt-1">
                 {node.caption}

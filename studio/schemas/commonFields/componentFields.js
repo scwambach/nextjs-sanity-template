@@ -14,7 +14,7 @@ export const componentFields = () => {
         name: 'backgroundColor',
         title: 'Background Color',
         fieldset: 'settings',
-      }),
+    }),
     },
     {
       name: 'colorCutOff',
@@ -49,13 +49,15 @@ export const componentFields = () => {
         name: 'backgroundImage',
         title: 'Background Image',
         fieldset: 'media',
-      }),
+        hidden: ({parent}) => parent.colorCutOff,
+    }),
     },
     {
       name: 'backgroundVideo',
       title: 'Background video',
       type: 'reference',
       fieldset: 'media',
+      hidden: ({parent}) => parent.colorCutOff,
       to: [{type: 'backgroundVideo'}],
     },
   ]

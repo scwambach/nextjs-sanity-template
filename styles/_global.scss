@@ -101,7 +101,7 @@ body {
 
 div {
   &[data-rmiz-modal-overlay='visible'] {
-    background-color: $violet;
+    background-color: $black;
     opacity: 0.9;
   }
 }
