@@ -160,6 +160,12 @@ export default {
       type: 'string',
     },
     {
+      name: 'enableSearch',
+      title: 'Enable Search',
+      type: 'boolean',
+      description: "Toggle ON to enable search functionality to the head of the website."
+    },
+    {
       name: 'customCss',
       title: 'Custom Styles (SCSS)',
       type: 'code',

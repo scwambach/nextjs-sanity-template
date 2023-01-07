@@ -28,6 +28,7 @@ export const globalQuery = groq`
       defined(secondaryEmail) => {secondaryEmail},
       defined(secondaryPhone) => {secondaryPhone}
     },
+    enableSearch,
   },
   "mainNavigation": *[_id == "mainNavigation"][0] {
     items[] {
