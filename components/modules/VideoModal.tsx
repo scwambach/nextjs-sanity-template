@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Portal } from 'react-portal';
 import ReactPlayer from 'react-player';
-import { AiOutlineClose } from '@meronex/icons/ai';
+import { IosClose } from '@meronex/icons/ios';
 import { colors } from '@styles';
 
 type VideoModalProps = {
@@ -17,6 +17,11 @@ const VideoModal = ({ video, active, setActive }: VideoModalProps) => {
     if (typeof window !== 'undefined') {
       setHasWindow(true);
     }
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        setActive(false);
+      }
+    });
   }, []);
   return (
     <>
@@ -38,10 +43,10 @@ const VideoModal = ({ video, active, setActive }: VideoModalProps) => {
                 setActive(false);
               }}
             >
-              <AiOutlineClose color={colors.white} size={70} />
+              <IosClose size={50} color={colors.white} />
             </button>
 
-            <div className="player-wrapper">
+            <div className="player-wrapper" id="videoPlayer">
               {active && (
                 <ReactPlayer
                   data-testid="videoPlayer"

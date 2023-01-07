@@ -7,17 +7,19 @@ export function ChangeView({ coords }) {
   return null;
 }
 
+const center = { lat: 37.9631388, lng: -87.5670065 };
+
 const DynamicMap = () => {
   return (
     <MapContainer
       className="z-20 relative"
-      center={{ lat: 37.9631388, lng: -87.5670065 }}
+      center={center}
       zoom={12}
       style={{ height: '460px' }}
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <Marker
-        position={{ lat: 37.9631388, lng: -87.5670065 }}
+        position={center}
         icon={L.icon({
           iconUrl: '/favicon.png',
         })}

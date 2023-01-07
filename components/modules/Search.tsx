@@ -94,9 +94,11 @@ const Search = ({ items, setSearchOpen }: SearchProps) => {
                     setSearchOpen(false);
                   }}
                 >
-                  <span className="image flex flex-col justify-center">
-                    <img src={result.mainImage} alt={result.title} />
-                  </span>
+                  {result.mainImage && (
+                    <span className="image flex flex-col justify-center">
+                      <img src={result.mainImage} alt={result.title} />
+                    </span>
+                  )}
                   <span className="copy my-2">
                     <span className="block font-bold">{result.title}</span>
                     <span className="block text-xs">
