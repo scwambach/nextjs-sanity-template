@@ -14,12 +14,6 @@ export default {
   fields: [
     ...componentFields(),
     {
-      name: 'boxed',
-      title: 'Boxed',
-      type: 'boolean',
-      fieldset: 'settings',
-    },
-    {
       title: 'Features',
       name: 'features',
       fieldset: 'content',
