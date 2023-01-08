@@ -36,7 +36,7 @@ const FormField = ({
             name={fieldId}
             id={fieldId}
             rows={4}
-            className="fieldInput block border-thin border-black-200 w-full px-2 md:px-5 py-1 md:py-2 md:text-lg bg-transparent"
+            className="fieldInput block border-thin bg-white-100 border-black-200 w-full px-2 md:px-5 py-1 md:py-2 md:text-lg bg-transparent"
             disabled={disabled}
             readOnly={readOnly}
             required={required}
@@ -65,7 +65,7 @@ const FormField = ({
                       id={`${slugify(choice.copy)}_${choice._key}`}
                       name={fieldId}
                       value={choice.value}
-                      className="h-0 w-0 overflow-hidden opacity-0"
+                      className="bg-white-100 h-0 w-0 overflow-hidden opacity-0"
                     />
                     <div
                       className={`flex items-center content-center justify-center w-5 h-5 bg-white-100 border-thin border-black-900 ${
@@ -90,7 +90,7 @@ const FormField = ({
           className={`${type} block mb-8`}
           htmlFor={fieldId}
         >
-          <span className={`text-xl font-boldå${hideLabel ? ' hidden' : ''}`}>
+          <span className={`text-xl font-bold ${hideLabel ? ' hidden' : ''}`}>
             {label}
           </span>
           {description && <p>{description}</p>}
@@ -98,7 +98,7 @@ const FormField = ({
             name={fieldId}
             pattern={validation}
             id={fieldId}
-            className="fieldInput block border-thin border-black-200 w-full px-2 md:px-5 py-1 md:py-2 md:text-lg bg-transparent"
+            className="fieldInput block border-thin bg-white-100 border-black-200 w-full px-2 md:px-5 py-1 md:py-2 md:text-lg"
             type={type}
             disabled={disabled}
             readOnly={readOnly}

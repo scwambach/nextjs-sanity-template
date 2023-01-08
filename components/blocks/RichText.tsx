@@ -34,17 +34,17 @@ const RichText = (props: RichTextProps) => {
 
   return (
     <div
-      className={`richText py-48 relative${className ? ` ${className}` : ''}`}
+      className={`richText py-14 lg:py-20 relative${className ? ` ${className}` : ''}`}
     >
       {children}
       <Heading {...headingProps} index={index} />
-      <Container maxWidth={columns ? breakpoints.xl : breakpoints.lg}>
+      <Container maxWidth={columns ? breakpoints.xl : breakpoints.md}>
         <div
           className={`relative grid ${
             columns === 'twoColumns'
-              ? 'lg:grid-cols-2 lg:gap-20'
+              ? 'md:grid-cols-2 md:gap-20'
               : columns === 'threeColumns'
-              ? 'lg:grid-cols-2 xl:grid-cols-3 lg:gap-10'
+              ? 'md:grid-cols-2 lg:grid-cols-3 md:gap-10'
               : ''
           }`}
         >
@@ -55,12 +55,12 @@ const RichText = (props: RichTextProps) => {
           )}
           {(columns === 'twoColumns' || columns === 'threeColumns') &&
             col2Content && (
-              <div className="copy -mt-8 lg:mt-0">
+              <div className="copy -mt-4 md:mt-0">
                 <PortableTextModule text={col2Content} className="font-body" />
               </div>
             )}
           {columns === 'threeColumns' && col3Content && (
-            <div className="copy -mt-8 xl:mt-0">
+            <div className="copy -mt-4 lg:mt-0">
               <PortableTextModule text={col3Content} className="font-body" />
             </div>
           )}

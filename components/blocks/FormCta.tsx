@@ -37,19 +37,19 @@ const FormCta = ({
         className="relative flex items-center flex-col sm:flex-row gap-14 sm:gap-10 lg:gap-32"
       >
         <div className="sm:w-1/2">
-          {subHeading && (
-            <p className="text-xl mb-5 text-blue-500 font-display">
-              {subHeading}
-            </p>
-          )}
 
           {heading && (
             <HeadingElement
-              type={indexHeading(index)}
-              className="font-display text-xl md:text-2xl lg:text-3xl max-w-md"
+            type={indexHeading(index)}
+            className="font-display text-xl md:text-2xl lg:text-3xl max-w-md"
             >
               {heading}
             </HeadingElement>
+          )}
+          {subHeading && (
+            <p className="text-xl mb-5 font-display">
+              {subHeading}
+            </p>
           )}
           {message && (
             <PortableTextModule

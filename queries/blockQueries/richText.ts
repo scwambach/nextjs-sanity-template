@@ -1,6 +1,6 @@
 import { groq } from 'next-sanity';
 import { assetQuery } from '../imageQuery';
-import { commonBlockProps } from './common';
+import { commonBlockProps, linkObject } from './common';
 
 export const richText = groq`
 _type == "richText" => {
@@ -9,6 +9,9 @@ _type == "richText" => {
   defined(col2Content) => {
     col2Content[] {
       ...,
+      _type == 'link' => {
+        ${linkObject}
+      },
       _type == 'image' => {
         ${assetQuery()}
       }

@@ -10,10 +10,10 @@ const AlertBar = ({ content }: AlertBarProps) => {
     setAlerted(false);
   };
   return (
-    <AlertBox className="fixed text-center bottom-0 left-0 bg-blue-500 w-full text-white-100">
-      <PortableTextModule text={content} />
+    <AlertBox className="fixed text-center bottom-0 left-0 bg-red-500 w-full text-white-100">
+      <PortableTextModule text={content} className="copy text-sm md:text-base"/>
       <button
-        className="absolute top-1/2 -translate-y-1/2 right-20"
+        className="absolute top-1/2 -translate-y-1/2 right-5"
         onClick={() => {
           handleClose();
         }}
@@ -27,6 +27,10 @@ const AlertBar = ({ content }: AlertBarProps) => {
 export { AlertBar };
 
 const AlertBox = styled.div`
+  .copy {
+    max-width: calc(100% - 120px);
+    margin: auto;
+  }
   p {
     margin: 10px;
   }

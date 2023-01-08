@@ -9,6 +9,12 @@ body {
   }
 }
 
+main {
+  @media screen and (min-width: ($lg)) {
+    min-height: calc(100vh - 121px);
+  }
+}
+
 .image-container {
   > span {
     display: block !important;

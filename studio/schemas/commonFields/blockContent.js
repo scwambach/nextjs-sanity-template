@@ -23,12 +23,15 @@ export const blockContent = (props = {}) => {
             {
               name: 'link',
               type: 'object',
-              title: 'External link',
+              title: 'Link',
               fields: [
                 {
                   name: 'href',
                   type: 'url',
                   title: 'URL',
+                  validation: (Rule) => Rule.uri({
+                    allowRelative: true,
+                  }),
                 },
                 {
                   title: 'Open in new tab',
@@ -36,19 +39,6 @@ export const blockContent = (props = {}) => {
                   description: 'Read https://css-tricks.com/use-target_blank/',
                   type: 'boolean',
                   initialValue: false,
-                },
-              ],
-            },
-            {
-              name: 'internalLink',
-              type: 'object',
-              title: 'Internal link',
-              fields: [
-                {
-                  name: 'reference',
-                  type: 'reference',
-                  title: 'Reference',
-                  to: [{type: 'page'}],
                 },
               ],
             },
