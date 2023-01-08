@@ -11,6 +11,7 @@ const LinkObject = ({
   className,
   newTab,
   children,
+  clickFunction
 }: LinkProps) => {
   const basePath = (type) => {
     return type === 'post'
@@ -36,6 +37,9 @@ const LinkObject = ({
               block: 'center',
               inline: 'center',
             });
+            if(clickFunction) {
+              clickFunction()
+            }
           }}
         >
           {children || copy}
@@ -47,6 +51,11 @@ const LinkObject = ({
           aria-label={`${copy} Link`}
           rel={newTab ? 'noopener noreferrer' : null}
           target={newTab ? '_blank' : '_self'}
+          onClick={() => {
+            if(clickFunction) {
+              clickFunction()
+            }
+          }}
         >
           {children || copy}
         </a>
@@ -59,6 +68,11 @@ const LinkObject = ({
           aria-label={`${copy} Link`}
           rel={newTab ? 'noopener noreferrer' : null}
           target={newTab ? '_blank' : '_self'}
+          onClick={() => {
+            if(clickFunction) {
+              clickFunction()
+            }
+          }}
         >
           {children || copy}
         </Link>

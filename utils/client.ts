@@ -21,6 +21,8 @@ export const config = {
    * */
 };
 
+
+
 if (!config.projectId) {
   throw Error('The Project ID is not set. Check your environment variables.');
 }
@@ -46,6 +48,7 @@ export const sanityClient = createClient(config);
 
 export const previewClient = createClient({
   ...config,
+  token: process.env.SANITY_TOKEN,
   useCdn: false,
 });
 

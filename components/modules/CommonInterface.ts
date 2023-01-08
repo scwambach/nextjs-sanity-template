@@ -133,6 +133,7 @@ export interface LinkProps {
   ariaLabel?: string;
   children?: any;
   className?: string;
+  clickFunction?: Function;
   copy?: string;
   internalLink?: { _type?: string; slug: { current: string } };
   newTab?: boolean;

@@ -1,10 +1,12 @@
 import {defineConfig} from 'sanity'
+import { unsplashImageAsset } from "sanity-plugin-asset-source-unsplash";
 import {visionTool} from '@sanity/vision'
 import {media} from 'sanity-plugin-media'
 import {schemaTypes} from './schemas'
 import {codeInput} from '@sanity/code-input'
 import {desk} from './desk'
 import {vars} from './env'
+
 
 const {SANITY_TITLE, SANITY_ID, SANITY_DATASET, REMOTE_URL, LOCAL_URL} = vars
 
@@ -13,7 +15,7 @@ export default defineConfig({
   title: SANITY_TITLE,
   projectId: SANITY_ID,
   dataset: SANITY_DATASET,
-  plugins: [desk, visionTool(), codeInput(), media()],
+  plugins: [desk, visionTool(), codeInput(), media(), unsplashImageAsset()],
   document: {
     // @ts-ignore
     productionUrl: async (prev, context) => {
@@ -25,7 +27,10 @@ export default defineConfig({
 
       if (document._type === 'page') {
         // you can now use async/await 🎉
-        const slug = await client.fetch(`*[_id == $docId][0].slug.current`, {
+        const slug = await client.fetch(`*[_id == $docId][0] {
+          slug,
+          _id
+        }`, {
           docId: document._id,
         })
 
@@ -33,7 +38,7 @@ export default defineConfig({
         params.set('preview', 'true')
         params.set('dataset', dataset)
 
-        return `${appUrl}/${slug === '/' ? '' : slug}?${params}`
+        return `${appUrl}/${slug === '/' ? '' : slug?._id}?${params}`
       }
 
       return prev

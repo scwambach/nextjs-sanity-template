@@ -46,7 +46,6 @@ export default CategoryPagination;
 
 export async function getServerSideProps({ params }) {
   const { category, page } = params;
-  console.log({ params });
 
   const doc = await getClient().fetch(blogCatQuery, {
     today,

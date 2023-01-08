@@ -17,6 +17,16 @@ const MainNav = ({ menuOpen, setMenuOpen }: MainNavProps) => {
     site: { enableSearch },
     mainNavigation: { items },
   } = useContext(MainContext);
+
+  const autoClosePanel = (buttonId:string) => {
+    const buttons = document.querySelectorAll("[data-id]")
+    const parent = Array.prototype.slice.call(buttons).filter(b => b.getAttribute('data-id') === buttonId)[0]
+
+    parent.click()
+  }
+
+
+
   return (
     <menu
       className={`menu
@@ -37,6 +47,7 @@ const MainNav = ({ menuOpen, setMenuOpen }: MainNavProps) => {
           {link.subItems ? (
             <Popover className="relative">
               <Popover.Button
+              data-id={_key}
                 className={`
               flex w-full items-center justify-end gap-2
               py-3 px-5 lg:py-0 lg:px-0
@@ -46,13 +57,16 @@ const MainNav = ({ menuOpen, setMenuOpen }: MainNavProps) => {
                 {link.copy}
                 <FaChevronDown />
               </Popover.Button>
-              <Popover.Panel className="panel lg:absolute lg:text-right bg-white-500 lg:bg-white-100 lg:top-10 lg:right-0 lg:z-30 lg:w-60">
+              <Popover.Panel className="panel lg:shadow-lg lg:shadow-black-100 lg:absolute lg:text-right bg-blue-200 lg:bg-white-100 lg:top-10 lg:right-0 lg:z-30 lg:w-60">
                 <ul>
                   {link.subItems.map((subItem) => (
                     <li key={subItem._key}>
                       <LinkObject
                         {...subItem}
                         className={`block border-t-white-700 py-3 px-5 ${subItem.className} ${linkClasses}`}
+                        clickFunction={() => {setMenuOpen(false)
+                          autoClosePanel(_key)
+                        }}
                       />
                     </li>
                   ))}
@@ -65,6 +79,7 @@ const MainNav = ({ menuOpen, setMenuOpen }: MainNavProps) => {
               <LinkObject
                 {...link}
                 className={`block py-3 px-5 lg:py-0 lg:px-0 ${linkClasses}`}
+                clickFunction={() => {setMenuOpen(false)}}
               />
             </>
           )}

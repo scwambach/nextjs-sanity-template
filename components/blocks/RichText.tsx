@@ -34,7 +34,7 @@ const RichText = (props: RichTextProps) => {
 
   return (
     <div
-      className={`richText py-14 lg:py-20 relative${
+      className={`richText text-base py-14 lg:py-20 relative${
         className ? ` ${className}` : ''
       }`}
     >

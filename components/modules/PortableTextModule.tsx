@@ -54,7 +54,7 @@ const PortableTextModule = ({ text, className, postLayout }: PortableProps) => {
       image: ({ node }) => (
         <div className={postLayout ? `lg:-mx-32 my-4 md:my-8` : undefined}>
           <figure>
-            <ProgressiveImage {...node} imgWidth={1200} mobileCrop />
+            {node.url &&  <ProgressiveImage {...node} imgWidth={1200} mobileCrop />}
             {node.caption && (
               <figcaption className="block text-center w-full border-b-[1px] border-white-400 px-2 pt-1">
                 {node.caption}
@@ -63,7 +63,7 @@ const PortableTextModule = ({ text, className, postLayout }: PortableProps) => {
           </figure>
         </div>
       ),
-      quote: ({ node }) => (
+      quoteBlock: ({ node }) => (
         <figure>
           <blockquote
             className="text-4xl border-l-4 border-black-900 pl-10"
@@ -74,7 +74,7 @@ const PortableTextModule = ({ text, className, postLayout }: PortableProps) => {
           </blockquote>
           {(node.signature || node.cite) && (
             <figcaption className="mt-5 mb-10">
-              - {node.signature}
+              - {node.signature}&nbsp;
               {node.cite && <cite>{node.cite}</cite>}
             </figcaption>
           )}

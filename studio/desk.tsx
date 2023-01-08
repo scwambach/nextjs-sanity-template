@@ -29,17 +29,19 @@ const PreviewModule = ({url}) => (
     <iframe
       title="Preview"
       src={url}
-      frameBorder={0}
       style={{width: '100%', height: '100%', overflow: 'hidden'}}
     />
   </div>
 )
 
 const WebPreview = ({document}) => {
+  const isDraft = !!document.draft;
+  const docId = isDraft ? document.draft?._id : document.displayed?.slug?.current
+
   const previewUrl = `${appUrl}/${
     document.displayed._type === 'post'
-      ? `blog/${document.displayed?.slug?.current}`
-      : document.displayed?.slug?.current
+      ? `blog/${docId}`
+      : docId
   }?preview`
   return <PreviewModule document={document} url={previewUrl} />
 }

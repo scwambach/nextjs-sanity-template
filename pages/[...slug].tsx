@@ -41,11 +41,14 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { slug = '' } = params;
+  const isPreview = `${slug.join('/')}`.indexOf('drafts.') === 0;
 
-  const doc = await getClient().fetch(pageQuery, {
+  const doc = await getClient(isPreview).fetch(pageQuery, {
     slug: `${slug.join('/')}`,
+    id: slug[0],
     today,
   });
+
 
   if (!doc.page) {
     return {
