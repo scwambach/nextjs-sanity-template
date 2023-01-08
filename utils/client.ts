@@ -21,8 +21,6 @@ export const config = {
    * */
 };
 
-
-
 if (!config.projectId) {
   throw Error('The Project ID is not set. Check your environment variables.');
 }

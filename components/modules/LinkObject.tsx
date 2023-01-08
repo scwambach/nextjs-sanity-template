@@ -11,7 +11,7 @@ const LinkObject = ({
   className,
   newTab,
   children,
-  clickFunction
+  clickFunction,
 }: LinkProps) => {
   const basePath = (type) => {
     return type === 'post'
@@ -37,8 +37,8 @@ const LinkObject = ({
               block: 'center',
               inline: 'center',
             });
-            if(clickFunction) {
-              clickFunction()
+            if (clickFunction) {
+              clickFunction();
             }
           }}
         >
@@ -52,8 +52,8 @@ const LinkObject = ({
           rel={newTab ? 'noopener noreferrer' : null}
           target={newTab ? '_blank' : '_self'}
           onClick={() => {
-            if(clickFunction) {
-              clickFunction()
+            if (clickFunction) {
+              clickFunction();
             }
           }}
         >
@@ -69,8 +69,8 @@ const LinkObject = ({
           rel={newTab ? 'noopener noreferrer' : null}
           target={newTab ? '_blank' : '_self'}
           onClick={() => {
-            if(clickFunction) {
-              clickFunction()
+            if (clickFunction) {
+              clickFunction();
             }
           }}
         >

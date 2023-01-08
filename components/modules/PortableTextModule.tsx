@@ -54,7 +54,9 @@ const PortableTextModule = ({ text, className, postLayout }: PortableProps) => {
       image: ({ node }) => (
         <div className={postLayout ? `lg:-mx-32 my-4 md:my-8` : undefined}>
           <figure>
-            {node.url &&  <ProgressiveImage {...node} imgWidth={1200} mobileCrop />}
+            {node.url && (
+              <ProgressiveImage {...node} imgWidth={1200} mobileCrop />
+            )}
             {node.caption && (
               <figcaption className="block text-center w-full border-b-[1px] border-white-400 px-2 pt-1">
                 {node.caption}

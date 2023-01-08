@@ -18,14 +18,14 @@ const MainNav = ({ menuOpen, setMenuOpen }: MainNavProps) => {
     mainNavigation: { items },
   } = useContext(MainContext);
 
-  const autoClosePanel = (buttonId:string) => {
-    const buttons = document.querySelectorAll("[data-id]")
-    const parent = Array.prototype.slice.call(buttons).filter(b => b.getAttribute('data-id') === buttonId)[0]
+  const autoClosePanel = (buttonId: string) => {
+    const buttons = document.querySelectorAll('[data-id]');
+    const parent = Array.prototype.slice
+      .call(buttons)
+      .filter((b) => b.getAttribute('data-id') === buttonId)[0];
 
-    parent.click()
-  }
-
-
+    parent.click();
+  };
 
   return (
     <menu
@@ -47,7 +47,7 @@ const MainNav = ({ menuOpen, setMenuOpen }: MainNavProps) => {
           {link.subItems ? (
             <Popover className="relative">
               <Popover.Button
-              data-id={_key}
+                data-id={_key}
                 className={`
               flex w-full items-center justify-end gap-2
               py-3 px-5 lg:py-0 lg:px-0
@@ -64,8 +64,9 @@ const MainNav = ({ menuOpen, setMenuOpen }: MainNavProps) => {
                       <LinkObject
                         {...subItem}
                         className={`block border-t-white-700 py-3 px-5 ${subItem.className} ${linkClasses}`}
-                        clickFunction={() => {setMenuOpen(false)
-                          autoClosePanel(_key)
+                        clickFunction={() => {
+                          setMenuOpen(false);
+                          autoClosePanel(_key);
                         }}
                       />
                     </li>
@@ -79,7 +80,9 @@ const MainNav = ({ menuOpen, setMenuOpen }: MainNavProps) => {
               <LinkObject
                 {...link}
                 className={`block py-3 px-5 lg:py-0 lg:px-0 ${linkClasses}`}
-                clickFunction={() => {setMenuOpen(false)}}
+                clickFunction={() => {
+                  setMenuOpen(false);
+                }}
               />
             </>
           )}
