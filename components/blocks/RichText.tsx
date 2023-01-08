@@ -34,7 +34,9 @@ const RichText = (props: RichTextProps) => {
 
   return (
     <div
-      className={`richText py-14 lg:py-20 relative${className ? ` ${className}` : ''}`}
+      className={`richText py-14 lg:py-20 relative${
+        className ? ` ${className}` : ''
+      }`}
     >
       {children}
       <Heading {...headingProps} index={index} />

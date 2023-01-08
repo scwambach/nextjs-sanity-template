@@ -1,12 +1,12 @@
 .richText {
-  ul, ol {
+  ul,
+  ol {
     margin-top: 1rem;
     margin-bottom: 1rem;
 
     @media screen and (min-width: ($md)) {
       margin-top: 2rem;
       margin-bottom: 2rem;
-
     }
   }
 }
