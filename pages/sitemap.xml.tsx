@@ -3,7 +3,7 @@ import { getClient } from '@utils';
 import { sitemapQuery } from '@queries';
 import dayjs from 'dayjs';
 
-const createSitemap = (doc) => {
+const createSitemap = (doc: any) => {
   const allPages = [...doc.pages, ...doc.authors];
 
   return `<?xml version="1.0" encoding="UTF-8"?>
