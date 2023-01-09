@@ -13,7 +13,7 @@ const createSitemap = (doc) => {
         ({ slug, _updatedAt }) => `
           <url>
             <loc>${`${process.env.SITE_URL}${
-              slug === '/' ? '' : `${slug}/`
+              slug === '//' ? '/' : `${slug}/`
             }`}</loc>
             <lastmod>${_updatedAt}</lastmod>
             <priority>0.80</priority>
