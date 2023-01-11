@@ -30,9 +30,9 @@ const ContactPage = ({ doc, form, global }: Props) => {
       global={global}
       message={noOrphans(doc.pageDescription)}
     >
-      <div className="bg-white-500 pb-10">
+      <div className="bg-blue-500 py-12 lg:py-20">
         <Container className="max-w-xl">
-          <div className="flex flex-col lg:flex-row gap-10 pb-10">
+          <div className="flex flex-col lg:flex-row gap-10">
             <Form
               {...form}
               className="w-full lg:w-1/2"
