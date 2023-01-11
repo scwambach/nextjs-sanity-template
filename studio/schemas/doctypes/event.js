@@ -14,11 +14,13 @@ export default {
     {
       title: 'Date',
       name: 'date',
-      type: 'date',
+      type: 'datetime',
       validation: (Rule) => Rule.required(),
       options: {
-        dateFormat: 'LL',
-        calendarTodayLabel: 'Today',
+        dateFormat: 'MM/DD/YYYY',
+        timeFormat: 'hh:mmA',
+        timeStep: 15,
+        calendarTodayLabel: 'Today'
       },
     },
     {
