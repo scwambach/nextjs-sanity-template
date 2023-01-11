@@ -6,17 +6,20 @@ import {
   MainContext,
 } from '@components';
 import { breakpoints } from '@styles';
-import FaChevronDown from '@meronex/icons/fa/FaChevronDown';
+import { FaChevronDown } from '@meronex/icons/fa';
 import { useContext, useState } from 'react';
+import Head from 'next/head';
 interface AccordionProps extends BlockProps {
   items: {
     _key: string;
-    label: string;
     content: any[];
+    label: string;
+    textAnswer: string;
   }[];
 }
 
 const Accordion = ({
+  _key,
   children,
   className,
   heading,
@@ -38,6 +41,34 @@ const Accordion = ({
         className ? ` ${className}` : ''
       }`}
     >
+      {items ? (
+        <Head>
+          <script
+            id={`faqInfo_${_key}`}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: `{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": ${JSON.stringify(
+              items.map((item) => {
+                return {
+                  '@type': 'Question',
+                  name: item.label,
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: `<p>${item.textAnswer}</p>`,
+                  },
+                };
+              })
+            )}
+          }`,
+            }}
+          />
+        </Head>
+      ) : (
+        <></>
+      )}
       {children}
       {(heading || subHeading) && <Heading {...headingProps} />}
       <div className="relative">

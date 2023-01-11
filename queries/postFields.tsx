@@ -3,6 +3,7 @@ import { assetQuery, imageQuery } from './imageQuery';
 
 export const postFields = groq`
   _id,
+  _type,
   publishDate,
   "slug": "blog/" + slug.current,
   title,
@@ -23,6 +24,11 @@ export const postFields = groq`
     "slug": "blog/author/" + slug.current,
     defined(photo) => { ${imageQuery({ name: 'photo' })}},
   },
+  "plainText": array::join(string::split((pt::text(bodyContent)), "")[], ""),
+  "excerpt": array::join(string::split((pt::text(bodyContent)), "")[0..255], "") + "...",
+  "numberOfCharacters": length(pt::text(bodyContent)),
+  "estimatedWordCount": round(length(pt::text(bodyContent)) / 5),
+  "estimatedReadingTime": round(length(pt::text(bodyContent)) / 5 / 180 ),
   bodyContent[] {
     ...,
     _type == 'image' => {

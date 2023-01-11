@@ -14,6 +14,7 @@ const Seo = ({ data, global }) => {
   const pageTitle = isHome
     ? global.site.siteTitle
     : `${data.title} | ${global.site.siteTitle}`;
+
   return (
     <Head>
       <title>{pageTitle}</title>
@@ -24,6 +25,34 @@ const Seo = ({ data, global }) => {
       <meta name="description" content={pageDesc} />
       <meta name="twitter:card" content="summary"></meta>
       <meta property="og:description" content={pageDesc} />
+      <script
+        id="siteInfo"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: `{
+          "@context": "http://schema.org",
+          "@type": "WebSite",
+          "name": "${global.site.siteTitle}",
+          "url": "${process.env.SITE_URL}"
+        }`,
+        }}
+      />
+      {data._type !== 'post' &&
+        data._type !== 'event' &&
+        data._type !== 'person' && (
+          <script
+            id="pageInfo"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: `{
+          "@context": "http://schema.org",
+          "@type": "WebPage",
+          "name": "${data.title}",
+          "description": "${pageDesc}"
+        }`,
+            }}
+          />
+        )}
     </Head>
   );
 };
