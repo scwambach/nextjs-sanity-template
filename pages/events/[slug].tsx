@@ -7,6 +7,7 @@ import {
   Container,
   Button,
   LinkObject,
+  EventJson,
 } from '@components';
 import { getClient } from '@utils';
 import { eventQuery } from '@queries';
@@ -42,6 +43,7 @@ const PostPage = ({ doc, global }: Props) => {
       `}
         date={doc.date}
       >
+        <EventJson {...doc} />
         <div className="bg-white-100">
           <Container maxWidth={breakpoints.md}>
             <div className="py-12 lg:py-20">

@@ -266,6 +266,7 @@ export interface EventProps {
   date: string;
   slug: string;
   description?: any;
+  excerpt?: string;
   postImage?: ImageProps;
   mainImage?: {
     _type?: string;

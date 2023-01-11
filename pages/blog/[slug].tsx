@@ -9,6 +9,7 @@ import {
   CommonPageProps,
   PostCardProps,
   ImageProps,
+  // PostJson,
 } from '@components';
 import { getClient, listingSettings } from '@utils';
 import { postQuery } from '@queries';
@@ -32,6 +33,7 @@ const PostPage = ({ doc, global }: Props) => {
   return (
     doc && (
       <DataPage data={doc} global={global} date={doc.publishDate}>
+        {/* <PostJson {...doc} /> */}
         <div className="relative pb-mobileVideo sm:pb-video lg:pb-0 lg:h-[500px] xl:h-[700px]">
           <ProgressiveImage {...doc.postImage} isBackground mobileCrop />
         </div>
