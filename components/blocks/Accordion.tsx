@@ -6,7 +6,7 @@ import {
   MainContext,
 } from '@components';
 import { breakpoints } from '@styles';
-import FaChevronDown from '@meronex/icons/fa/FaChevronDown';
+import {FaChevronDown} from '@meronex/icons/fa';
 import { useContext, useState } from 'react';
 import Head from 'next/head';
 interface AccordionProps extends BlockProps {
