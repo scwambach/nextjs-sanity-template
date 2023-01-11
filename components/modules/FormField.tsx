@@ -15,6 +15,7 @@ const FormField = ({
   placeholder,
   readOnly,
   required,
+  index,
   type,
   validation,
 }: FormFieldProps) => {
@@ -36,7 +37,7 @@ const FormField = ({
             name={fieldId}
             id={fieldId}
             rows={4}
-            className="fieldInput block border-thin bg-white-100 border-black-200 w-full px-2 md:px-5 py-1 md:py-2 md:text-lg bg-transparent"
+            className="fieldInput block border-thin bg-white-100 border-black-200 w-full px-2 md:px-5 py-1 md:py-2 md:text-lg"
             disabled={disabled}
             readOnly={readOnly}
             required={required}
@@ -57,12 +58,12 @@ const FormField = ({
                   <label
                     key={choice._key}
                     className="flex flex-row-reverse justify-start gap-1"
-                    htmlFor={`${slugify(choice.copy)}_${choice._key}`}
+                    htmlFor={`${slugify(choice.copy)}_${choice._key}-${index}`}
                   >
                     <span>{choice.copy}</span>
                     <input
                       type={type}
-                      id={`${slugify(choice.copy)}_${choice._key}`}
+                      id={`${slugify(choice.copy)}_${choice._key}-${index}`}
                       name={fieldId}
                       value={choice.value}
                       className="bg-white-100 h-0 w-0 overflow-hidden opacity-0"
