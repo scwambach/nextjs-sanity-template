@@ -1,3 +1,8 @@
+export interface AssetProps {
+  _ref?: string;
+  _type?: string;
+}
+
 export interface AllPageProps {
   _createdAt?: string;
   _id?: string;
@@ -6,21 +11,12 @@ export interface AllPageProps {
   _updatedAt?: string;
   mainImage?: {
     _type?: string;
-    asset?: {
-      _ref?: string;
-      _type?: string;
-    };
+    asset?: AssetProps;
   };
   pageDescription?: string;
   slug?: string;
   title?: string;
 }
-
-export interface AssetProps {
-  _ref: string;
-  _type: string;
-}
-
 export interface ImageObj {
   _type: string;
   asset: AssetProps;

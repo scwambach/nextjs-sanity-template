@@ -1,6 +1,7 @@
 import { urlFor } from '@utils';
 import dayjs from 'dayjs';
 import Head from 'next/head';
+import { AssetProps } from '@components';
 
 interface PostJsonProps {
   _createdAt?: string;
@@ -9,7 +10,10 @@ interface PostJsonProps {
   categories?: { title: string }[];
   estimatedWordCount?: number;
   excerpt?: string;
-  mainImage?: string;
+  mainImage?: {
+    _type?: string;
+    asset?: AssetProps;
+  };
   pageDescription?: string;
   plainText?: string;
   publishDate?: string;
