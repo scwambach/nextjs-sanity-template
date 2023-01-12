@@ -13,10 +13,10 @@ const LinkObject = ({
   children,
   clickFunction,
 }: LinkProps) => {
-  const basePath = (type) => {
+  const basePath = (type: string) => {
     return type === 'post'
       ? 'blog/'
-      : type === 'psotCategory'
+      : type === 'postCategory'
       ? 'blog/category'
       : type === 'project'
       ? 'project/'
