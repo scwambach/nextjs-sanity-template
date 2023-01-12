@@ -2,6 +2,11 @@
 
 This template is designed to speed up setup time for setting up a website with NextJS as a frontend and Sanity as a backend.
 
+# [Demo Site](https://scw-nextjs-sanity-template.vercel.app/)
+
+## TODO's
+- [ ] How to setup emails
+
 ---
 
 ## Setup
