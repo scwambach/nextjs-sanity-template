@@ -9,7 +9,8 @@
     "start": "sanity start",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "deploy-graphql": "sanity graphql deploy"
+    "deploy-graphql": "sanity graphql deploy",
+    "backup": "curl https://$npm_config_id.api.sanity.io/v2021-06-07/data/export/production/ > backup.ndjson"
   },
   "keywords": [
     "sanity"

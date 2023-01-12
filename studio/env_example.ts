@@ -1,4 +1,5 @@
-// DELETE THIS FILE AFTER SETUP
+// COPY THIS AND RENAME TO env.ts THEN DELETE THIS FILE AFTER SETUP
+
 export const vars = {
   SANITY_ID: 'abcdefgh',
   SANITY_DATASET: 'production',
