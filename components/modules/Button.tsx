@@ -7,7 +7,7 @@ const Button = ({ children, className }: ButtonProps) => {
   return (
     <span
       data-testid="button"
-      className={`m-0 inline-block lg:hover:bg-blue-500 button text-center relative cursor-pointer bg-black-900 text-white-100 overflow-hidden${
+      className={`m-0  inline-block lg:hover:bg-blue-500 button text-center relative cursor-pointer bg-black-900 text-white-100 overflow-hidden${
         className ? ` ${className}` : ''
       }`}
     >
