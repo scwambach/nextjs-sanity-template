@@ -1,5 +1,10 @@
 import { useRouter } from 'next/router';
-import { DynamicPage, DynamicPageDataProps, GlobalProps } from '@components';
+import {
+  DynamicPage,
+  DynamicPageDataProps,
+  GlobalProps,
+  NoIndex,
+} from '@components';
 import { usePreviewSubscription, getClient } from '@utils';
 import { homeQuery } from '@queries';
 import dayjs from 'dayjs';
@@ -9,9 +14,13 @@ const today = dayjs(new Date()).format('YYYY-MM-DD');
 interface Props {
   doc?: DynamicPageDataProps;
   global?: GlobalProps;
+  notFound?: boolean;
 }
 
-const IndexPage = ({ doc, global }: Props) => {
+const IndexPage = ({ doc, global, notFound }: Props) => {
+  if (notFound) {
+    return <NoIndex />;
+  }
   const router = useRouter();
   const isPreview = router.query.preview === '';
 
@@ -36,9 +45,7 @@ export async function getStaticProps() {
   });
 
   if (!doc.page) {
-    return {
-      notFound: true,
-    };
+    return { props: { notFound: true } };
   }
 
   return { props: { doc: doc.page, global: doc.global } };

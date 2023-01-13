@@ -8,13 +8,13 @@ import {desk} from './desk'
 import {vars} from './env'
 
 
-const {SANITY_TITLE, SANITY_ID, SANITY_DATASET, REMOTE_URL, LOCAL_URL} = vars
+const {SANITY_TITLE, SANITY_STUDIO_API_PROJECT_ID, SANITY_STUDIO_API_DATASET, REMOTE_URL, LOCAL_URL} = vars
 
 export default defineConfig({
   name: 'default',
   title: SANITY_TITLE,
-  projectId: SANITY_ID,
-  dataset: SANITY_DATASET,
+  projectId: SANITY_STUDIO_API_PROJECT_ID,
+  dataset: SANITY_STUDIO_API_DATASET,
   plugins: [desk, visionTool(), codeInput(), media(), unsplashImageAsset()],
   document: {
     // @ts-ignore

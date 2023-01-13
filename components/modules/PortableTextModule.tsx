@@ -112,8 +112,8 @@ const PortableTextModule = ({ text, className, postLayout }: PortableProps) => {
       className={`block${className ? ` ${className}` : ''}`}
     >
       <BlockContent
-        projectId={process.env.SANITY_ID}
-        dataset={process.env.SANITY_DATASET}
+        projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+        dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
         serializers={serializers}
         renderContainerOnSingleChild
         blocks={text}

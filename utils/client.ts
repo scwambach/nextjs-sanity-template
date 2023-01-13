@@ -10,8 +10,8 @@ export const config = {
    *
    * https://nextjs.org/docs/basic-features/environment-variables
    * */
-  dataset: process.env.SANITY_DATASET,
-  projectId: process.env.SANITY_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   useCdn: process.env.NODE_ENV === 'production',
   apiVersion: dayjs(new Date()).format('YYYY-MM-DD'),
   /**
@@ -46,7 +46,7 @@ export const sanityClient = createClient(config);
 
 export const previewClient = createClient({
   ...config,
-  token: process.env.SANITY_TOKEN,
+  token: process.env.SANITY_API_READ_TOKEN,
   useCdn: false,
 });
 

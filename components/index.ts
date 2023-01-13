@@ -42,6 +42,7 @@ export { Leaflet } from './modules/Leaflet';
 export { LinkObject } from './modules/LinkObject';
 export { MainNav } from './modules/MainNav';
 export { NavToggle } from './modules/NavToggle';
+export { NoIndex } from './modules/NoIndex';
 export { PageComponent } from './modules/PageComponent';
 export { PageNav } from './modules/PageNav';
 export { PersonCard } from './modules/PersonCard';

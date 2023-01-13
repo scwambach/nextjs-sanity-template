@@ -2,9 +2,9 @@
 module.exports = {
   reactStrictMode: true,
   env: {
-    SANITY_ID: process.env.SANITY_ID,
-    SANITY_DATASET: process.env.SANITY_DATASET,
-    SANITY_TOKEN: process.env.SANITY_TOKEN,
+    NEXT_PUBLIC_SANITY_PROJECT_ID: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+    NEXT_PUBLIC_SANITY_DATASET: process.env.NEXT_PUBLIC_SANITY_DATASET,
+    SANITY_API_READ_TOKEN: process.env.SANITY_API_READ_TOKEN,
     SITE_URL: process.env.SITE_URL,
   },
   images: {
