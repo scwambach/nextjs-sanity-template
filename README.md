@@ -1,15 +1,45 @@
 ![NextJS_Sanity_Template](https://user-images.githubusercontent.com/8299237/211938271-0e6a0c19-0d69-4891-940c-72f6579dcf3b.png)
 
-This template is designed to speed up setup time for setting up a website with NextJS as a frontend and Sanity as a backend.
+This template is designed to speed up setup time for setting up a website with [NextJS](https://github.com/vercel/next.js) as a frontend and [Sanity](https://www.sanity.io) as a backend.
 
 # [Demo Site](https://scw-nextjs-sanity-template.vercel.app/)
 
 ## TODO's
-- [ ] How to setup emails
+- [ ] How-To for setting up nodemailer in the README
+- [ ] How-To for getting the remaining env vars after the deploy
+- [ ] Add preview for entire sites content
 
 ---
+## Table of Contents
+- [Demo Site](#demo-site)
+  - [TODO's](#todos)
+  - [Table of Contents](#table-of-contents)
+  - [Setup](#setup)
+  - [Local Setup](#local-setup)
+    - [Install Homebrew (if you need to)](#install-homebrew-if-you-need-to)
+    - [Install NVM (if you need to)](#install-nvm-if-you-need-to)
+    - [Install Node.js (if you need to)](#install-nodejs-if-you-need-to)
+    - [Install Yarn (if you need to)](#install-yarn-if-you-need-to)
+    - [Install Root Level Packages](#install-root-level-packages)
+    - [Install Sanity Studio](#install-sanity-studio)
+    - [Install Sanity CLI](#install-sanity-cli)
+    - [Setup a new Sanity Studio](#setup-a-new-sanity-studio)
+  - [ENV Variables](#env-variables)
+  - [Run project](#run-project)
+  - [Data](#data)
+    - [Load startup data](#load-startup-data)
+    - [Load components data](#load-components-data)
+    - [Backup Data](#backup-data)
+  - [Packages worth noting](#packages-worth-noting)
 
+---
 ## Setup
+
+Use the Deploy Button below. It will let you deploy the starter using [Vercel](https://vercel.com/) as well as connect it to your Sanity Content Lake using the [Sanity Vercel Integration](https://www.sanity.io/docs/vercel-integration?utm_source=github.com&utm_medium=referral&utm_campaign=nextjs-v3vercelstarter).
+
+[![Deploy to Vercel](https://camo.githubusercontent.com/5e471e99e8e022cf454693e38ec843036ec6301e27ee1e1fa10325b1cb720584/68747470733a2f2f76657263656c2e636f6d2f627574746f6e)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fscwambach%2Fnextjs-sanity-template&project-name=nextjs-sanity-template&repository-name=nextjs-sanity-template&demo-title=Another%20NextJS%20Wesbite%20Template&demo-description=Guess%20what%3F%21%20Someone%20made%20another%20Sanity%20and%20NextJS%20template%21%21%21%20This%20is%20feature%20rich%20website%20builder.%20Includes%20blog%2C%20categories%2C%20project%2C%20events%2C%20plus%20many%20more%20schemas%20pre-installed.&demo-url=https%3A%2F%2Fscw-nextjs-sanity-template.vercel.app%2F&demo-image=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F81pocpw8%2Fproduction%2Fdda43046ca1edaf8661603fab6101632388c7596-1025x733.png%3Fw%3D2000%26fit%3Dmax%26auto%3Dformat&integration-ids=oac_hb2LITYajhRQ0i4QznmKH7gx&external-id=nextjs;template=nextjs-personal-website-cms-sanity-v3)
+
+## Local Setup
 
 ### Install Homebrew <small style="font-size: 11px">(if you need to)</small>
 
