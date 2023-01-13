@@ -75,7 +75,7 @@ export async function getStaticProps() {
     today,
   });
 
-  if (!doc) {
+  if (!doc.page) {
     return {
       notFound: true,
     };

@@ -28,7 +28,7 @@ const Header = ({ alerted }: { alerted: boolean }) => {
               <ImageIcon image={iconImage} icon={customIcon} />
             </div>
             <p className="hidden sm:block font-display text-md lg:text-xl ml-3">
-              {siteTitle}
+              {siteTitle || 'SITE TITLE'}
             </p>
           </Link>
           {/* Toggle Button */}

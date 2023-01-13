@@ -21,7 +21,7 @@ const Seo = ({ data, global }) => {
       <link rel="canonical" href={pagePath} />
       <meta property="og:image" content={pageImage} />
       <meta name="twitter:image" content={twitterImage} />
-      <meta property="og:title" content={pageTitle} />
+      <meta property="og:title" content={pageTitle || 'PAGE TITLE'} />
       <meta name="description" content={pageDesc} />
       <meta name="twitter:card" content="summary"></meta>
       <meta property="og:description" content={pageDesc} />
@@ -32,7 +32,7 @@ const Seo = ({ data, global }) => {
           __html: `{
           "@context": "http://schema.org",
           "@type": "WebSite",
-          "name": "${global.site.siteTitle}",
+          "name": "${global.site.siteTitle || 'SITE TITLE'}",
           "url": "${process.env.SITE_URL}"
         }`,
         }}

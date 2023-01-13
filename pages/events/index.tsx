@@ -36,9 +36,11 @@ export async function getStaticProps() {
     today,
   });
 
-  // return {
-  //   notFound: true,
-  // };
+  if ((!doc.page && !doc.events) || doc.events.length === 0) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {

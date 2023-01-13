@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="py-12 md:flex md:items-center md:justify-between border-t-[1px] border-black-400 text-black-300">
           <div className="mt-8 md:order-1 md:mt-0">
             <p className="text-center text-base">
-              &copy; {year} {siteTitle}. All rights reserved.
+              &copy; {year} {siteTitle || 'SITE TITLE'}. All rights reserved.
             </p>
           </div>
         </div>
