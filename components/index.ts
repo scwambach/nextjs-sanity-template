@@ -83,4 +83,4 @@ export type {
   ProgressiveImageProps,
   SearchItem,
   SiteProps,
-} from './modules/CommonInterface';
+} from './CommonInterface';

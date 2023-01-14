@@ -1,4 +1,4 @@
-import { GlobalProps } from 'components/modules/CommonInterface';
+import { GlobalProps } from 'components/CommonInterface';
 import Head from 'next/head';
 
 const DocHead = ({ site }: GlobalProps) => {
