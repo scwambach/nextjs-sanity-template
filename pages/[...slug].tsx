@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import { DynamicPage, DynamicPageDataProps, GlobalProps } from '@components';
 import { pageQuery, paths } from '@queries';
 import { usePreviewSubscription, getClient } from '@utils';
@@ -8,14 +7,12 @@ const today = dayjs(new Date()).format('YYYY-MM-DD');
 interface Props {
   doc?: DynamicPageDataProps;
   global?: GlobalProps;
+  isPreview?: boolean;
 }
 
-const PageBuilder = ({ doc, global }: Props) => {
-  const router = useRouter();
-  const isPreview = router.query.preview === '';
-
+const PageBuilder = ({ doc, global, isPreview }: Props) => {
   const { data } = usePreviewSubscription(pageQuery, {
-    params: { slug: doc?.slug, today },
+    params: { slug: doc?.slug, today, id: doc?._id },
     initialData: doc,
     enabled: isPreview,
   });
@@ -55,5 +52,5 @@ export async function getStaticProps({ params }) {
     };
   }
 
-  return { props: { doc: doc.page, global: doc.global } };
+  return { props: { doc: doc.page, global: doc.global, isPreview } };
 }

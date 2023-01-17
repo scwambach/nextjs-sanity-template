@@ -5,6 +5,7 @@ export const postFields = groq`
   _id,
   _type,
   publishDate,
+  "slugObject": slug,
   "slug": "blog/" + slug.current,
   title,
   pageDescription,

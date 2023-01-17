@@ -15,6 +15,9 @@ export interface AllPageProps {
   };
   pageDescription?: string;
   slug?: string;
+  slugObject?: {
+    current: string;
+  };
   title?: string;
 }
 export interface ImageObj {
@@ -237,6 +240,7 @@ export interface PersonCardProps {
 export interface CommonPageProps {
   doc?: AllPageProps;
   global?: GlobalProps;
+  isPreview?: boolean;
 }
 
 export interface PostCardProps {

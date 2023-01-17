@@ -11,7 +11,7 @@ import {
   PostList,
   ProgressiveImage,
 } from '@components';
-import { getClient, listingSettings } from '@utils';
+import { getClient, listingSettings, usePreviewSubscription } from '@utils';
 import { postQuery } from '@queries';
 import dayjs from 'dayjs';
 import { breakpoints } from '@styles';
@@ -25,24 +25,40 @@ interface NewDoc extends AllPageProps {
 
 interface Props extends CommonPageProps {
   doc: NewDoc;
+  path?: string;
 }
 
 const today = dayjs(new Date()).format('YYYY-MM-DD');
 
-const PostPage = ({ doc, global }: Props) => {
+const PostPage = ({ doc, global, isPreview, path }: Props) => {
+  console.log({ path });
+  const { data } = usePreviewSubscription(postQuery, {
+    params: {
+      from: 0,
+      limit: listingSettings.postLimit,
+      slug: path,
+      today,
+    },
+    initialData: doc,
+    enabled: isPreview,
+  });
+
+  const pageData = isPreview ? data : doc;
+
   return (
-    doc && (
-      <DataPage data={doc} global={global} date={doc.publishDate}>
-        <PostJson {...doc} />
+    pageData && (
+      <DataPage data={pageData} global={global} date={pageData.publishDate}>
+        <PostJson {...pageData} />
+
         <div className="relative pb-mobileVideo sm:pb-video lg:pb-0 lg:h-[500px] xl:h-[700px]">
-          <ProgressiveImage {...doc.postImage} isBackground mobileCrop />
+          <ProgressiveImage {...pageData.postImage} isBackground mobileCrop />
         </div>
 
         <div className="py-header bg-white-100">
           <Container maxWidth={breakpoints.md}>
-            <PortableTextModule text={doc.bodyContent} postLayout />
+            <PortableTextModule text={pageData.bodyContent} postLayout />
           </Container>
-          {doc.related.length > 0 && (
+          {pageData.related && pageData.related.length > 0 && (
             <>
               <Container maxWidth={breakpoints.xl}>
                 <HeadingElement
@@ -54,7 +70,12 @@ const PostPage = ({ doc, global }: Props) => {
               </Container>
 
               <aside>
-                <PostList limit={3} count={3} cols={3} posts={doc.related} />
+                <PostList
+                  limit={3}
+                  count={3}
+                  cols={3}
+                  posts={pageData.related}
+                />
               </aside>
             </>
           )}
@@ -81,7 +102,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
-  const doc = await getClient().fetch(postQuery, {
+  const isPreview = `${slug}`.indexOf('drafts.') === 0;
+  console.log({ isPreview, params });
+  const doc = await getClient(isPreview).fetch(postQuery, {
     today,
     slug,
     limit: listingSettings.postLimit,
@@ -99,6 +122,8 @@ export async function getStaticProps({ params }) {
       doc: {
         ...doc.page,
       },
+      path: slug,
+      isPreview,
       global: doc.global,
     },
   };
