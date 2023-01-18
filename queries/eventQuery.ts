@@ -3,7 +3,7 @@ import { groq } from 'next-sanity';
 import { imageQuery } from './imageQuery';
 
 export const eventQuery = groq`{
-  "page": *[_type == 'event' && $slug == slug.current && !(_id in path("drafts.**"))][0] {
+  "page": *[_type == 'event' && _id == $slug || _type == 'event' && $slug == slug.current && !(_id in path("drafts.**"))][0] {
     _id,
     _type,
     title,

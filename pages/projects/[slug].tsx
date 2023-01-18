@@ -52,7 +52,7 @@ export async function getStaticPaths() {
     "slug": slug.current
   }`);
   const docs = await res;
-  const pathSlugs = docs.map((doc) => ({
+  const pathSlugs = docs.map((doc: { slug: string }) => ({
     params: { slug: doc.slug },
   }));
 
@@ -61,7 +61,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
-  const doc = await getClient().fetch(projectQuery, {
+  const isPreview = `${slug}`.indexOf('drafts.') === 0;
+
+  const doc = await getClient(isPreview).fetch(projectQuery, {
     today,
     slug,
     limit: listingSettings.postLimit,

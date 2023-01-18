@@ -25,7 +25,7 @@ export default defineConfig({
 
       const appUrl = window.location.hostname === 'localhost' ? LOCAL_URL : REMOTE_URL
 
-      if (document._type === 'page' || document._type === 'post' || document._type === 'project') {
+      if (document._type === 'page' || document._type === 'post' || document._type === 'project' ) {
         // you can now use async/await 🎉
         const slug = await client.fetch(`*[_id == $docId][0] {
           slug,

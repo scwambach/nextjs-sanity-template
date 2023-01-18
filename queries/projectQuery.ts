@@ -3,7 +3,7 @@ import { groq } from 'next-sanity';
 import { projectFields } from 'queries/projectFields';
 
 export const projectQuery = groq`{
-  "page": *[_type == 'project' && $slug == slug.current && !(_id in path("drafts.**"))][0] {
+  "page": *[_type == 'project' && _id == $slug || _type == 'project' && $slug == slug.current && !(_id in path("drafts.**"))][0] {
     ${projectFields},
   },
   ${globalQuery}

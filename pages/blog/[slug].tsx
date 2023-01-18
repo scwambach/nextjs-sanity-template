@@ -74,7 +74,7 @@ export async function getStaticPaths() {
     "slug": slug.current
   }`);
   const docs = await res;
-  const pathSlugs = docs.map((doc) => ({
+  const pathSlugs = docs.map((doc: { slug: string }) => ({
     params: { slug: doc.slug },
   }));
 
