@@ -7,6 +7,7 @@ export const eventsQuery = groq`{
   "events":*[_type == "event" && ((_id in path('drafts.**')) == false) && date >= $today] | order(date asc) {
     _id,
     title,
+    endDate,
     date,
     "slug": "events/" + slug.current,
     defined(mainImage) => {mainImage },
@@ -14,6 +15,7 @@ export const eventsQuery = groq`{
       fieldName: 'postImage',
       name: 'mainImage',
     })} },
+    defined(description) => { description },
     defined(physicalLocation) => { physicalLocation },
     defined(location) => { location },
     defined(time) => { time },

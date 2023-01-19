@@ -7,6 +7,7 @@ export const pastEventsQuery = groq`{
   "events":*[_type == "event" && ((_id in path('drafts.**')) == false) && date < $today] | order(date desc) {
     _id,
     title,
+    endDate,
     date,
     "slug": "events/" + slug.current,
     defined(mainImage) => {mainImage },

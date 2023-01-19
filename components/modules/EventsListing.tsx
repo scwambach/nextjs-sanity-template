@@ -6,6 +6,7 @@ import {
   ProgressiveImage,
 } from '@components';
 import { breakpoints } from '@styles';
+import { parseDates } from '@utils';
 import dayjs from 'dayjs';
 
 interface EventsListingProps {
@@ -24,12 +25,12 @@ const EventsListing = ({ events, past }: EventsListingProps) => {
                 {
                   _id,
                   date,
+                  endDate,
                   links,
                   location,
                   postImage,
                   physicalLocation,
                   slug,
-                  time,
                   title,
                 },
                 index
@@ -51,8 +52,8 @@ const EventsListing = ({ events, past }: EventsListingProps) => {
                       <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
                         {title}
                       </h2>
-                      <p>{dayjs(date).format('MMMM D, YYYY')}</p>
-                      {time && <p>{time}</p>}
+                      <p>{parseDates(date, endDate)}</p>
+
                       {physicalLocation && (
                         <p>
                           <LinkObject

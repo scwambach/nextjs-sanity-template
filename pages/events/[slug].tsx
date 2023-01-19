@@ -20,6 +20,18 @@ interface Props extends CommonPageProps {
 
 const today = dayjs(new Date()).format('YYYY-MM-DD');
 
+const parseDates = (dateTimeOne: string, dateTimeTwo: string) => {
+  const firstDate = dayjs(dateTimeOne).format('MMM DD, YYYY');
+  const firstTime = dayjs(dateTimeOne).format('hh:mm A');
+  const endDate = dayjs(dateTimeTwo).format('MMM DD, YYYY');
+  const endTime = dayjs(dateTimeTwo).format('hh:mm A');
+  const sameDay = firstDate === endDate;
+  const sameTime = firstTime === endTime;
+  const times = sameTime ? firstTime : `${firstTime} - ${endTime}`;
+  const dates = sameDay ? firstDate : `${firstDate} - ${endDate}`;
+  return `${dates}${times ? ` | ${times}` : ''}`;
+};
+
 const PostPage = ({ doc, global }: Props) => {
   return (
     doc && (
@@ -27,21 +39,23 @@ const PostPage = ({ doc, global }: Props) => {
         data={doc}
         global={global}
         message={`
-        Time: ${doc.time}
-        <br>
         <a
-          class="hover:text-blue-500 transition-all ease-in-out"
+          class="mb-2 font-bold underline block hover:text-blue-500 transition-all ease-in-out"
           href='https://www.google.com/maps/place/${doc.location?.street} ${
           doc.location?.cityStateZip
         }'
         >
-          Location: ${
-            doc.location?.name ||
-            `${doc.location?.street}, ${doc.location?.cityStateZip}`
+          ${
+            doc.physicalLocation
+              ? `Location: ${
+                  doc.location?.name ||
+                  `${doc.location?.street}, ${doc.location?.cityStateZip}`
+                }`
+              : ''
           }
         </a>
+        <p>${parseDates(doc.date, doc.endDate)}</p>
       `}
-        date={doc.date}
       >
         <EventJson {...doc} />
         <div className="bg-white-100">

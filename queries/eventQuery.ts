@@ -8,6 +8,7 @@ export const eventQuery = groq`{
     _type,
     title,
     date,
+    endDate,
     "slug": "events/" + slug.current,
     defined(mainImage) => {mainImage },
     defined(mainImage) => { ${imageQuery({

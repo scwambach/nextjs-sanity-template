@@ -264,6 +264,7 @@ export interface EventProps {
   _id: string;
   title: string;
   date: string;
+  endDate: string;
   slug: string;
   description?: any;
   excerpt?: string;
@@ -281,7 +282,6 @@ export interface EventProps {
     street: string;
   };
   physicalLocation?: boolean;
-  time?: string;
   links?: LinkProps[];
 }
 
