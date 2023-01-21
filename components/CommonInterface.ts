@@ -15,6 +15,9 @@ export interface AllPageProps {
   };
   pageDescription?: string;
   slug?: string;
+  slugObject?: {
+    current: string;
+  };
   title?: string;
 }
 export interface ImageObj {
@@ -237,6 +240,7 @@ export interface PersonCardProps {
 export interface CommonPageProps {
   doc?: AllPageProps;
   global?: GlobalProps;
+  isPreview?: boolean;
 }
 
 export interface PostCardProps {
@@ -260,6 +264,7 @@ export interface EventProps {
   _id: string;
   title: string;
   date: string;
+  endDate: string;
   slug: string;
   description?: any;
   excerpt?: string;
@@ -277,7 +282,6 @@ export interface EventProps {
     street: string;
   };
   physicalLocation?: boolean;
-  time?: string;
   links?: LinkProps[];
 }
 

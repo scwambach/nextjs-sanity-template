@@ -25,7 +25,7 @@ export default defineConfig({
 
       const appUrl = window.location.hostname === 'localhost' ? LOCAL_URL : REMOTE_URL
 
-      if (document._type === 'page') {
+      if (document._type === 'page' || document._type === 'post' || document._type === 'project' ) {
         // you can now use async/await 🎉
         const slug = await client.fetch(`*[_id == $docId][0] {
           slug,
@@ -38,7 +38,7 @@ export default defineConfig({
         params.set('preview', 'true')
         params.set('dataset', dataset)
 
-        return `${appUrl}/${slug === '/' ? '' : slug?._id}?${params}`
+        return `${appUrl}/${document._type === 'post' ? `blog/${slug?._id}` : document._type === 'project' ? `projects/${slug?._id}`: slug?._id}?${params}`
       }
 
       return prev

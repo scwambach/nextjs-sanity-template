@@ -12,7 +12,7 @@ export default {
     {...slug()},
     {...mainImage},
     {
-      title: 'Date',
+      title: 'Date and Start Time',
       name: 'date',
       type: 'datetime',
       validation: (Rule) => Rule.required(),
@@ -24,9 +24,15 @@ export default {
       },
     },
     {
-      title: 'Time',
-      name: 'time',
-      type: 'string',
+      title: 'Date and End Time',
+      name: 'endDate',
+      type: 'datetime',
+      options: {
+        dateFormat: 'MM/DD/YYYY',
+        timeFormat: 'hh:mmA',
+        timeStep: 15,
+        calendarTodayLabel: 'Today'
+      },
     },
     {
       name: 'physicalLocation',
@@ -66,7 +72,7 @@ export default {
       title: 'Links',
       name: 'links',
       type: 'array',
-      description: 'Provide any relavent links to the event',
+      description: 'Provide any relevant links to the event',
       validation: (Rule) => Rule.max(2),
       of: [{...link({title: 'Link', name: 'link'})}],
     },

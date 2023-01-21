@@ -41,6 +41,10 @@ const WebPreview = ({document}) => {
   const previewUrl = `${appUrl}/${
     document.displayed._type === 'post'
       ? `blog/${docId}`
+      : document.displayed._type === 'project'
+      ? `projects/${docId}`
+      : document.displayed._type === 'event'
+      ? `events/${docId}`
       : docId
   }?preview`
   return <PreviewModule document={document} url={previewUrl} />
@@ -48,7 +52,7 @@ const WebPreview = ({document}) => {
 
 export const desk = deskTool({
   defaultDocumentNode: (S, {schemaType}) => {
-    if (schemaType === 'page' || schemaType === 'post') {
+    if (schemaType === 'page' || schemaType === 'post'|| schemaType === 'project' || schemaType === 'event') {
       return S.document().views([S.view.form(), S.view.component(WebPreview).title('Preview')])
     }
   },

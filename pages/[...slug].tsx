@@ -1,30 +1,17 @@
-import { useRouter } from 'next/router';
 import { DynamicPage, DynamicPageDataProps, GlobalProps } from '@components';
 import { pageQuery, paths } from '@queries';
-import { usePreviewSubscription, getClient } from '@utils';
+import { getClient } from '@utils';
 import dayjs from 'dayjs';
 
 const today = dayjs(new Date()).format('YYYY-MM-DD');
 interface Props {
   doc?: DynamicPageDataProps;
   global?: GlobalProps;
+  isPreview?: boolean;
 }
 
 const PageBuilder = ({ doc, global }: Props) => {
-  const router = useRouter();
-  const isPreview = router.query.preview === '';
-
-  const { data } = usePreviewSubscription(pageQuery, {
-    params: { slug: doc?.slug, today },
-    initialData: doc,
-    enabled: isPreview,
-  });
-
-  const pageData = isPreview ? data.page : doc;
-
-  return (
-    pageData && global?.site && <DynamicPage data={pageData} global={global} />
-  );
+  return doc && global?.site && <DynamicPage data={doc} global={global} />;
 };
 
 export default PageBuilder;
@@ -32,7 +19,7 @@ export default PageBuilder;
 export async function getStaticPaths() {
   const res = await getClient().fetch(paths);
   const docs = await res;
-  const pathSlugs = docs.map((doc) => ({
+  const pathSlugs = docs.map((doc: { slug: string }) => ({
     params: { slug: doc.slug.split('/') },
   }));
 
@@ -55,5 +42,5 @@ export async function getStaticProps({ params }) {
     };
   }
 
-  return { props: { doc: doc.page, global: doc.global } };
+  return { props: { doc: doc.page, global: doc.global, isPreview } };
 }

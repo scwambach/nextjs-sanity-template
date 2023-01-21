@@ -14,5 +14,6 @@ export { newRatio } from './newRatio';
 export { noOrphans } from './noOrphans';
 export { parseAuthors } from './parseAuthors';
 export { parseCategories } from './parseCategories';
+export { parseDates } from './parseDates';
 export { slugify } from './slugify';
 export { convertTime12to24, timePrettier, dateTimeConverter } from './time';

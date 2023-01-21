@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 interface EventJsonProps {
   date?: string;
+  endDate?: string;
   excerpt?: string;
   location?: {
     name?: string;
@@ -16,6 +17,7 @@ interface EventJsonProps {
 
 const EventJson = ({
   date,
+  endDate,
   excerpt,
   location,
   physicalLocation,
@@ -35,7 +37,7 @@ const EventJson = ({
           "url": "${process.env.SITE_URL}/${slug}",
           "description": "${excerpt}",
           "startDate": "${dayjs(date).format('MM/DD/YYYY hh:mmA')}",
-          "endDate": "${dayjs(date).format('MM/DD/YYYY hh:mmA')}"${
+          "endDate": "${dayjs(endDate || date).format('MM/DD/YYYY hh:mmA')}"${
             !physicalLocation ? '' : ','
           }
           ${

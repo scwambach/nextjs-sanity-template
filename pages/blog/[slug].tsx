@@ -25,6 +25,7 @@ interface NewDoc extends AllPageProps {
 
 interface Props extends CommonPageProps {
   doc: NewDoc;
+  path?: string;
 }
 
 const today = dayjs(new Date()).format('YYYY-MM-DD');
@@ -34,6 +35,7 @@ const PostPage = ({ doc, global }: Props) => {
     doc && (
       <DataPage data={doc} global={global} date={doc.publishDate}>
         <PostJson {...doc} />
+
         <div className="relative pb-mobileVideo sm:pb-video lg:pb-0 lg:h-[500px] xl:h-[700px]">
           <ProgressiveImage {...doc.postImage} isBackground mobileCrop />
         </div>
@@ -42,7 +44,7 @@ const PostPage = ({ doc, global }: Props) => {
           <Container maxWidth={breakpoints.md}>
             <PortableTextModule text={doc.bodyContent} postLayout />
           </Container>
-          {doc.related.length > 0 && (
+          {doc.related && doc.related.length > 0 && (
             <>
               <Container maxWidth={breakpoints.xl}>
                 <HeadingElement
@@ -72,7 +74,7 @@ export async function getStaticPaths() {
     "slug": slug.current
   }`);
   const docs = await res;
-  const pathSlugs = docs.map((doc) => ({
+  const pathSlugs = docs.map((doc: { slug: string }) => ({
     params: { slug: doc.slug },
   }));
 
@@ -81,7 +83,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
-  const doc = await getClient().fetch(postQuery, {
+  const isPreview = `${slug}`.indexOf('drafts.') === 0;
+
+  const doc = await getClient(isPreview).fetch(postQuery, {
     today,
     slug,
     limit: listingSettings.postLimit,
@@ -96,9 +100,8 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      doc: {
-        ...doc.page,
-      },
+      doc: doc.page,
+      isPreview,
       global: doc.global,
     },
   };
