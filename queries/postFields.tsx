@@ -1,5 +1,6 @@
 import { groq } from 'next-sanity';
-import { assetQuery, imageQuery } from './imageQuery';
+import { imageQuery } from './imageQuery';
+import { richTextContent } from './blockQueries/common';
 
 export const postFields = groq`
   _id,
@@ -31,10 +32,7 @@ export const postFields = groq`
   "estimatedWordCount": round(length(pt::text(bodyContent)) / 5),
   "estimatedReadingTime": round(length(pt::text(bodyContent)) / 5 / 180 ),
   bodyContent[] {
-    ...,
-    _type == 'image' => {
-      ${assetQuery()}
-    }
+    ${richTextContent}
   },
   mainImage,
   ${imageQuery({ fieldName: 'postImage', name: 'mainImage' })}

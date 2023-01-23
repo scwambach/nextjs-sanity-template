@@ -1,6 +1,5 @@
 import { groq } from 'next-sanity';
-import { assetQuery } from '../imageQuery';
-import { commonBlockProps, linkObject } from './common';
+import { commonBlockProps, richTextContent } from './common';
 
 export const richText = groq`
 _type == "richText" => {
@@ -8,28 +7,16 @@ _type == "richText" => {
   columns,
   defined(col2Content) => {
     col2Content[] {
-      ...,
-      _type == 'link' => {
-        ${linkObject}
-      },
-      _type == 'image' => {
-        ${assetQuery()}
-      }
+      ${richTextContent}
     },
   },
   defined(col3Content) => {
     col3Content[] {
-      ...,
-      _type == 'image' => {
-        ${assetQuery()}
-      }
+      ${richTextContent}
     },
   },
   blockContent[] {
-    ...,
-    _type == 'image' => {
-      ${assetQuery()}
-    }
+    ${richTextContent}
   },
 }
 `;

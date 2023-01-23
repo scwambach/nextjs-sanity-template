@@ -53,6 +53,39 @@ export const blockContent = (props = {}) => {
       },
       {
         type: 'object',
+        name: 'videoEmbed',
+        title: 'Video Embed',
+        fields: [
+          {
+            name: 'featureVideo',
+            validation: (Rule) => Rule.required(),
+            title: 'Feature Video',
+            type: 'reference',
+            to: [{ type: 'video' }],
+          },
+          {
+            name: 'caption',
+            type: 'string',
+            title: 'Caption',
+          },
+        ],
+        preview: {
+          select: {
+            title: 'featureVideo.title',
+            subtitle: 'featureVideo.url',
+            media: 'featureVideo.poster'
+          },
+          prepare({ title, subtitle, media }) {
+            return {
+              media,
+              title,
+              subtitle,
+            };
+          },
+        },
+      },
+      {
+        type: 'object',
         name: 'quoteBlock',
         title: 'Quote',
         fields: [
