@@ -1,18 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import * as C from '@components';
 import styled from 'styled-components';
 
 const PageComponent = (props: C.BlockProps) => {
-  const [hasWindow, setHasWindow] = useState(false);
   const [inView, setInView] = useState(false);
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setHasWindow(true);
-    }
-  }, []);
-
   const ref = useRef();
+
+  const { hasWindow } = useContext(C.MainContext);
 
   useEffect(() => {
     const currentComponent = document.getElementById(props.componentId);

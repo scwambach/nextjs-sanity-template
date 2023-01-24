@@ -64,6 +64,9 @@ export const linkObject = groq`
 
 export const richTextContent = groq`
 ...,
+_type == 'generalEmbed' => {
+  code
+},
 _type == 'videoEmbed' => {
   "featureVideo": featureVideo -> url,
   "poster": featureVideo -> poster

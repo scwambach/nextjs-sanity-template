@@ -2,9 +2,10 @@ import Link from 'next/link';
 import { FaQuoteLeft } from '@meronex/icons/fa';
 import BlockContent from '@sanity/block-content-to-react';
 import styled from 'styled-components';
-import { ProgressiveImage } from '@components';
+import { ProgressiveImage, MainContext } from '@components';
 import ReactPlayer from 'react-player';
 import { urlFor } from '@utils';
+import { useContext } from 'react';
 
 interface PortableProps {
   text?: any[];
@@ -51,28 +52,36 @@ const BlockRenderer = (props) => {
 };
 
 const PortableTextModule = ({ text, className, postLayout }: PortableProps) => {
+  const { hasWindow } = useContext(MainContext);
   const serializers = {
     types: {
-      videoEmbed: ({ node }) => (
-        // TODO: Fix Hydration Issue
-        <div className={postLayout ? `lg:-mx-32 my-4 md:my-8` : undefined}>
-          <figure>
-            <ReactPlayer
-              url={node.featureVideo}
-              controls
-              playing
-              width="100%"
-              height={500}
-              light={node.poster ? `${urlFor(node.poster).width(900)}` : null}
-            />
+      videoEmbed: ({ node }) =>
+        hasWindow && (
+          <div className={postLayout ? `lg:-mx-32 my-4 md:my-8` : undefined}>
+            <figure>
+              <ReactPlayer
+                url={node.featureVideo}
+                controls
+                playing
+                width="100%"
+                height={500}
+                light={node.poster ? `${urlFor(node.poster).width(900)}` : null}
+              />
 
-            {node.caption && (
-              <figcaption className="block text-center w-full border-b-[1px] border-white-400 px-2 pt-1">
-                {node.caption}
-              </figcaption>
-            )}
-          </figure>
-        </div>
+              {node.caption && (
+                <figcaption className="block text-center w-full border-b-[1px] border-white-400 px-2 pt-1">
+                  {node.caption}
+                </figcaption>
+              )}
+            </figure>
+          </div>
+        ),
+      generalEmbed: ({ node }) => (
+        <div
+          dangerouslySetInnerHTML={{
+            __html: node.code,
+          }}
+        />
       ),
       image: ({ node }) => (
         <div className={postLayout ? `lg:-mx-32 my-4 md:my-8` : undefined}>

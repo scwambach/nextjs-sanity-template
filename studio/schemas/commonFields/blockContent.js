@@ -86,6 +86,31 @@ export const blockContent = (props = {}) => {
       },
       {
         type: 'object',
+        name: 'generalEmbed',
+        title: 'General Embed',
+        description: 'This could be from SoundCloud, Spotify, or anything.',
+        fields: [
+          {
+            name: 'code',
+            type: 'text',
+            title: 'Code',
+            description: 'Paste code here',
+          },
+        ],
+        preview: {
+          select: {
+            subtitle: 'code',
+          },
+          prepare({  subtitle }) {
+            return {
+              title: 'General Embed',
+              subtitle,
+            };
+          },
+        },
+      },
+      {
+        type: 'object',
         name: 'quoteBlock',
         title: 'Quote',
         fields: [
