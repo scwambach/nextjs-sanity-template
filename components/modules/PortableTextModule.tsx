@@ -6,6 +6,7 @@ import { ProgressiveImage, MainContext } from '@components';
 import ReactPlayer from 'react-player';
 import { urlFor } from '@utils';
 import { useContext } from 'react';
+import { CodeBlock, dracula } from 'react-code-blocks';
 
 interface PortableProps {
   text?: any[];
@@ -81,6 +82,14 @@ const PortableTextModule = ({ text, className, postLayout }: PortableProps) => {
           dangerouslySetInnerHTML={{
             __html: node.code,
           }}
+        />
+      ),
+      codeSnippet: ({ node }) => (
+        <CodeBlock
+          text={node.code}
+          showLineNumbers
+          language={node.language}
+          theme={dracula}
         />
       ),
       image: ({ node }) => (

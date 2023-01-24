@@ -52,6 +52,11 @@ export const blockContent = (props = {}) => {
         },
       },
       {
+        name: 'codeSnippet',
+        title: 'Code Snippet',
+        type: 'code',
+      },
+      {
         type: 'object',
         name: 'videoEmbed',
         title: 'Video Embed',

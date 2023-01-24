@@ -64,6 +64,9 @@ export const linkObject = groq`
 
 export const richTextContent = groq`
 ...,
+_type == 'codeSnippet' => {
+  ...
+},
 _type == 'generalEmbed' => {
   code
 },
