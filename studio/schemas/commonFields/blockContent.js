@@ -52,6 +52,69 @@ export const blockContent = (props = {}) => {
         },
       },
       {
+        name: 'codeSnippet',
+        title: 'Code Snippet',
+        type: 'code',
+      },
+      {
+        type: 'object',
+        name: 'videoEmbed',
+        title: 'Video Embed',
+        fields: [
+          {
+            name: 'featureVideo',
+            validation: (Rule) => Rule.required(),
+            title: 'Feature Video',
+            type: 'reference',
+            to: [{ type: 'video' }],
+          },
+          {
+            name: 'caption',
+            type: 'string',
+            title: 'Caption',
+          },
+        ],
+        preview: {
+          select: {
+            title: 'featureVideo.title',
+            subtitle: 'featureVideo.url',
+            media: 'featureVideo.poster'
+          },
+          prepare({ title, subtitle, media }) {
+            return {
+              media,
+              title,
+              subtitle,
+            };
+          },
+        },
+      },
+      {
+        type: 'object',
+        name: 'generalEmbed',
+        title: 'General Embed',
+        description: 'This could be from SoundCloud, Spotify, or anything.',
+        fields: [
+          {
+            name: 'code',
+            type: 'text',
+            title: 'Code',
+            description: 'Paste code here',
+          },
+        ],
+        preview: {
+          select: {
+            subtitle: 'code',
+          },
+          prepare({  subtitle }) {
+            return {
+              title: 'General Embed',
+              subtitle,
+            };
+          },
+        },
+      },
+      {
         type: 'object',
         name: 'quoteBlock',
         title: 'Quote',

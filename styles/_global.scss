@@ -1,5 +1,5 @@
 body {
-  background-color: $white;
+  background-color: $black;
 
   * {
     &::selection {
@@ -10,9 +10,7 @@ body {
 }
 
 main {
-  @media screen and (min-width: ($lg)) {
-    min-height: calc(100vh - 121px);
-  }
+  background-color: $white;
 }
 
 .image-container {

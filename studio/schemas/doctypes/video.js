@@ -16,14 +16,24 @@ export default {
       title: 'Url',
       type: 'url',
     },
+    {
+      type: 'image',
+      name: 'poster',
+      title: 'Poster',
+      options: {
+        hotspot: true,
+      },
+    },
   ],
   preview: {
     select: {
       title: 'title',
       subtitle: 'url',
+      media: 'poster'
     },
-    prepare({ title, subtitle }) {
+    prepare({ title, subtitle, media }) {
       return {
+        media,
         title,
         subtitle,
       };

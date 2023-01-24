@@ -24,6 +24,7 @@ type MainLayoutProps = {
 interface ContextProps extends MainLayoutProps {
   alerted?: boolean;
   scrollingDown?: boolean;
+  hasWindow?: boolean;
   setAlerted?: Function;
   windowWidth?: number;
 }
@@ -41,12 +42,17 @@ const MainLayout = ({
 }: MainLayoutProps) => {
   const today = dayjs(new Date()).format('YYYY-MM-DD');
 
+  const [hasWindow, setHasWindow] = useState(false);
   const [windowWidth, setWindowWidth] = useState(null);
   const [scrollingDown, setScrollingDown] = useState(false);
   const [alerted, setAlerted] = useState(false);
 
   useEffect(() => {
     const isAlertClosed = sessionStorage.getItem('alertClosed');
+
+    if (typeof window !== 'undefined') {
+      setHasWindow(true);
+    }
 
     if (isAlertClosed) {
       setAlerted(false);
@@ -80,11 +86,12 @@ const MainLayout = ({
         alerted,
         contact,
         footerNavigation,
+        hasWindow,
         mainNavigation,
         scrollingDown,
+        search,
         setAlerted,
         site,
-        search,
         windowWidth,
       }}
     >

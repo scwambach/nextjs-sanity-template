@@ -61,3 +61,23 @@ export const linkObject = groq`
     slug
   } }
 `;
+
+export const richTextContent = groq`
+...,
+_type == 'codeSnippet' => {
+  ...
+},
+_type == 'generalEmbed' => {
+  code
+},
+_type == 'videoEmbed' => {
+  "featureVideo": featureVideo -> url,
+  "poster": featureVideo -> poster
+},
+_type == 'link' => {
+  ${linkObject}
+},
+_type == 'image' => {
+  ${assetQuery()}
+}
+`;
