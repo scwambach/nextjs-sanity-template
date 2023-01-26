@@ -49,6 +49,7 @@ const VideoModal = ({ video, active, setActive }: VideoModalProps) => {
               {active && (
                 <ReactPlayer
                   className="react-player"
+                  playing
                   url={
                     video.indexOf('http') < 0 ? `/videos/${video}.mp4` : video
                   }

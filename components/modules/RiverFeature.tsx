@@ -1,9 +1,10 @@
 import { breakpoints, colors } from '@styles';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import {
   Button,
   HeadingElement,
   LinkObject,
+  MainContext,
   PortableTextModule,
   ProgressiveImage,
   VideoModal,
@@ -24,13 +25,14 @@ const RiverFeature = ({
   feature: { image, title, videoModal, blockContent, links },
 }: FeatureProps) => {
   const [active, setActive] = useState(false);
+  const { windowWidth } = useContext(MainContext);
   return (
     <div
-      className={`riverFeature md:flex relative${
+      className={`riverFeature sm:flex relative${
         index % 2 == 0 ? ' flex-row-reverse' : ' flex-row'
-      }${index > 0 ? ' mt-5 md:mt-20 lg:mt-0' : ''}`}
+      }${index > 0 ? ' mt-5 sm:mt-10 lg:mt-0' : ''}`}
     >
-      <div className="image md:m-riverImage w-full md:w-1/2 relative pb-mobileVideo sm:pb-video md:pb-0">
+      <div className="image sm:m-riverImage w-full sm:w-1/2 relative pb-video lg:pb-0">
         {image?.url && (
           <ProgressiveImage
             {...image}
@@ -47,7 +49,10 @@ const RiverFeature = ({
               setActive(true);
             }}
           >
-            <AiFillPlayCircle color={colors.white} size={100} />
+            <AiFillPlayCircle
+              color={colors.white}
+              size={windowWidth > breakpoints.sm ? 80 : 50}
+            />
           </button>
         )}
         {videoModal && (
@@ -59,14 +64,14 @@ const RiverFeature = ({
         )}
       </div>
       <div
-        className={`copy md:py-10 lg:py-20 py-10 md:w-1/2 ${
-          index % 2 == 0 ? 'md:pr-10 lg:pr-20' : 'md:pl-10 lg:pl-20'
+        className={`copy py-5 sm:py-10 lg:py-20 sm:w-1/2 flex flex-col justify-center ${
+          index % 2 == 0 ? 'sm:pr-10 lg:pr-20' : 'sm:pl-10 lg:pl-20'
         }`}
       >
         {title && (
           <HeadingElement
             type={indexHeading(parentIndex)}
-            className="text-blue-500 text-xl md:text-2xl lg:text-3xl font-bold md:mb-5"
+            className="text-blue-500 text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-5"
           >
             {noOrphans(title)}
           </HeadingElement>
@@ -79,7 +84,7 @@ const RiverFeature = ({
         )}
 
         {links?.length > 0 && (
-          <div className="buttons flex flex-col md:flex-row gap-2 mt-10">
+          <div className="buttons flex flex-row gap-2 my-5 sm:mt-10 sm:m">
             {links.map((link) => (
               <Button key={link._key}>
                 <LinkObject key={link._key} {...link} />
