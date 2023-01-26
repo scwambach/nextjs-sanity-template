@@ -78,15 +78,8 @@ const Form = ({
   };
 
   return (
-    <FormContainer
-      data-testid="form"
-      className={`form${className ? ` ${className}` : ''}`}
-    >
-      {heading && (
-        <h4 data-testid="form-heading" className="block font-display text-2xl">
-          {heading}
-        </h4>
-      )}
+    <FormContainer className={`form${className ? ` ${className}` : ''}`}>
+      {heading && <h4 className="block font-display text-2xl">{heading}</h4>}
 
       {description && (
         <PortableTextModule text={description} className="-mt-4" />

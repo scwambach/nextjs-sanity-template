@@ -100,13 +100,13 @@ const Accordion = ({
                 <div
                   className={`${
                     isActive
-                      ? 'opacity-100 max-h-[500px]'
+                      ? 'opacity-100 max-h-[1000px]'
                       : 'opacity-0 max-h-0 overflow-hidden'
                   } transition-all ease-in-out duration-300`}
                 >
                   <PortableTextModule
                     text={content}
-                    className="bg-blue-500 text-white-100 text-sm md:text-md p-5 mb-5"
+                    className={`bg-blue-500 text-white-100 text-[11px] sm:text-sm md:text-md p-3 sm:p-5 mb-5 pt-5 pb-4 md:pt-8 md:pb-6`}
                   />
                 </div>
               </div>

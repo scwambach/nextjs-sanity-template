@@ -148,10 +148,7 @@ const PortableTextModule = ({ text, className, postLayout }: PortableProps) => {
   };
 
   return (
-    <CopyBlock
-      data-testid="portable-text"
-      className={`block${className ? ` ${className}` : ''}`}
-    >
+    <CopyBlock className={`block${className ? ` ${className}` : ''}`}>
       <BlockContent
         projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
         dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
@@ -166,6 +163,17 @@ const PortableTextModule = ({ text, className, postLayout }: PortableProps) => {
 export { PortableTextModule };
 
 const CopyBlock = styled.div`
+  > div {
+    * {
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   ol,
   ul {
     margin-left: 1.75rem;

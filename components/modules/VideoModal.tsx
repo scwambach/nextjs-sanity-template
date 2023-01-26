@@ -28,7 +28,6 @@ const VideoModal = ({ video, active, setActive }: VideoModalProps) => {
       {hasWindow && video && (
         <Portal>
           <div
-            data-testid="videoModal"
             className={`fixed bg-overlay z-40 h-screen w-screen top-0 left-0 transition-all ease-in-out flex flex-col justify-center items-center ${
               active
                 ? 'opacity-100 pointer-events-auto'
@@ -49,7 +48,6 @@ const VideoModal = ({ video, active, setActive }: VideoModalProps) => {
             <div className="player-wrapper" id="videoPlayer">
               {active && (
                 <ReactPlayer
-                  data-testid="videoPlayer"
                   className="react-player"
                   url={
                     video.indexOf('http') < 0 ? `/videos/${video}.mp4` : video

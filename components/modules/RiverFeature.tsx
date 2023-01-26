@@ -26,7 +26,6 @@ const RiverFeature = ({
   const [active, setActive] = useState(false);
   return (
     <div
-      data-testid="riverFeature"
       className={`riverFeature md:flex relative${
         index % 2 == 0 ? ' flex-row-reverse' : ' flex-row'
       }${index > 0 ? ' mt-5 md:mt-20 lg:mt-0' : ''}`}
@@ -44,7 +43,6 @@ const RiverFeature = ({
           <button
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 cursor-pointer"
             title="Play Video"
-            data-testid="videoModalButton"
             onClick={() => {
               setActive(true);
             }}
@@ -61,7 +59,6 @@ const RiverFeature = ({
         )}
       </div>
       <div
-        data-testid="copy"
         className={`copy md:py-10 lg:py-20 py-10 md:w-1/2 ${
           index % 2 == 0 ? 'md:pr-10 lg:pr-20' : 'md:pl-10 lg:pl-20'
         }`}

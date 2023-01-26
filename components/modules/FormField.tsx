@@ -24,11 +24,7 @@ const FormField = ({
   return (
     <>
       {type === 'textarea' ? (
-        <label
-          data-testid="form-field-textarea"
-          className={`${type} block mb-8`}
-          htmlFor={fieldId}
-        >
+        <label className={`${type} block mb-8`} htmlFor={fieldId}>
           <span className={`text-xl font-bold${hideLabel ? ' hidden' : ''}`}>
             {label}
           </span>
@@ -46,7 +42,7 @@ const FormField = ({
           />
         </label>
       ) : type === 'checkbox' || type === 'radio' ? (
-        <div data-testid="form-field-choice" className={`${type} block mb-8`}>
+        <div className={`${type} block mb-8`}>
           <p className={`text-xl font-bold${hideLabel ? ' hidden' : ''}`}>
             {label}
           </p>
@@ -86,11 +82,7 @@ const FormField = ({
           </div>
         </div>
       ) : (
-        <label
-          data-testid="form-field"
-          className={`${type} block mb-8`}
-          htmlFor={fieldId}
-        >
+        <label className={`${type} block mb-8`} htmlFor={fieldId}>
           <span className={`text-xl font-bold ${hideLabel ? ' hidden' : ''}`}>
             {label}
           </span>
