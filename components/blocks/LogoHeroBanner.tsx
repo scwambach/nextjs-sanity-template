@@ -1,5 +1,6 @@
 import { BlockProps, Container, HeadingElement, ImageIcon } from '@components';
 import { breakpoints } from '@styles';
+import styled from 'styled-components';
 
 interface LogoHeroBannerProps extends BlockProps {
   logo?: any;
@@ -13,22 +14,22 @@ const LogoHeroBanner = ({
   logo,
 }: LogoHeroBannerProps) => {
   return (
-    <div
-      className={`logoHeroBanner relative py-12 lg:py-20${
+    <LogoBanner
+      className={`logoHeroBanner component-shell${
         className ? ` ${className}` : ''
       }`}
     >
       {children}
       <div className="relative">
-        <Container maxWidth={breakpoints.xl}>
+        <Container maxWidth={breakpoints.md}>
           <ImageIcon
             icon={logo}
-            className="block w-full max-w-[600px] mx-auto"
+            className="logo-block block w-full max-w-[350px] mx-auto"
           />
 
           {copy && (
             <HeadingElement
-              className="text-center font-display text-4xl mt-10 uppercase tracking-wide"
+              className="text-center font-display sm:text-2xl lg:text-4xl mt-10 uppercase tracking-wide"
               type="h1"
             >
               {copy}
@@ -36,8 +37,15 @@ const LogoHeroBanner = ({
           )}
         </Container>
       </div>
-    </div>
+    </LogoBanner>
   );
 };
 
 export { LogoHeroBanner };
+
+const LogoBanner = styled.div`
+  .logo-block {
+    display: flex;
+    justify-content: center;
+  }
+`;

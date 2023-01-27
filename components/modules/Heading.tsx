@@ -38,12 +38,7 @@ const Heading = ({
           </HeadingElement>
         )}
         {subHeading && <p className="sub-heading">{noOrphans(subHeading)}</p>}
-        {message && (
-          <PortableTextModule
-            text={message}
-            className="text-sm md:text-base my-5"
-          />
-        )}
+        {message && <PortableTextModule text={message} className="my-5" />}
         {links?.length > 0 && (
           <div className="buttons flex items-center justify-center gap-10 mt-10">
             {links.map((link) => (

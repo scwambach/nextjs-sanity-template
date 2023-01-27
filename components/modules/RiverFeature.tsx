@@ -71,17 +71,12 @@ const RiverFeature = ({
         {title && (
           <HeadingElement
             type={indexHeading(parentIndex)}
-            className="text-blue-500 text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-5"
+            className="heading-element mb-2 md:mb-5 text-blue-500"
           >
             {noOrphans(title)}
           </HeadingElement>
         )}
-        {blockContent && (
-          <PortableTextModule
-            text={blockContent}
-            className="text-sm md:text-base"
-          />
-        )}
+        {blockContent && <PortableTextModule text={blockContent} />}
 
         {links?.length > 0 && (
           <div className="buttons flex flex-row gap-2 my-5 sm:mt-10 sm:m">

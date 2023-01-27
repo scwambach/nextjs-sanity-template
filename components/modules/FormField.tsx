@@ -25,10 +25,16 @@ const FormField = ({
     <>
       {type === 'textarea' ? (
         <label className={`${type} block mb-8`} htmlFor={fieldId}>
-          <span className={`text-xl font-bold${hideLabel ? ' hidden' : ''}`}>
+          <span
+            className={`text-base md:text-xl font-bold${
+              hideLabel ? ' hidden' : ''
+            }`}
+          >
             {label}
           </span>
-          {description && <p>{description}</p>}
+          {description && (
+            <p className="base-copy-size sml mb-3">{description}</p>
+          )}
           <textarea
             name={fieldId}
             id={fieldId}
@@ -43,10 +49,16 @@ const FormField = ({
         </label>
       ) : type === 'checkbox' || type === 'radio' ? (
         <div className={`${type} block mb-8`}>
-          <p className={`text-xl font-bold${hideLabel ? ' hidden' : ''}`}>
+          <p
+            className={`text-base md:text-xl font-bold${
+              hideLabel ? ' hidden' : ''
+            }`}
+          >
             {label}
           </p>
-          {description && <p>{description}</p>}
+          {description && (
+            <p className="base-copy-size sml mb-3">{description}</p>
+          )}
           <div className="choices flex gap-5">
             {choices?.map(
               (choice) =>
@@ -83,10 +95,16 @@ const FormField = ({
         </div>
       ) : (
         <label className={`${type} block mb-8`} htmlFor={fieldId}>
-          <span className={`text-xl font-bold ${hideLabel ? ' hidden' : ''}`}>
+          <span
+            className={`text-base md:text-xl font-bold ${
+              hideLabel ? ' hidden' : ''
+            }`}
+          >
             {label}
           </span>
-          {description && <p>{description}</p>}
+          {description && (
+            <p className="base-copy-size sml mb-3">{description}</p>
+          )}
           <input
             name={fieldId}
             pattern={validation}

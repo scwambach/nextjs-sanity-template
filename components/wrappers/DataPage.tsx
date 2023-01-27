@@ -45,15 +45,12 @@ const DataPage = function ({
               </div>
             )}
             <div className="max-w-md">
-              <HeadingElement
-                type="h1"
-                className="text-xl md:text-2xl lg:text-3xl font-display"
-              >
+              <HeadingElement type="h1" className="heading-element lrg">
                 {data.title}
               </HeadingElement>
               {message && (
                 <p
-                  className="my-2 text-sm md:text-base"
+                  className="base-copy my-2"
                   dangerouslySetInnerHTML={{
                     __html: message,
                   }}

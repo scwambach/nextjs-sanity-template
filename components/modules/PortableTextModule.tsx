@@ -27,27 +27,27 @@ const BlockRenderer = (props) => {
   }
   if (style === 'h2') {
     return (
-      <h2 className="text-4xl my-4 md:my-8 font-display uppercase tracking-widest">
+      <h2 className="text-2xl md:text-3xl lg:text-4xl base-heading">
         {children}
       </h2>
     );
   }
   if (style === 'h3') {
     return (
-      <h3 className="text-3xl my-4 md:my-8 font-display uppercase tracking-widest">
+      <h3 className="text-xl md:text-xl lg:text-3xl base-heading">
         {children}
       </h3>
     );
   }
   if (style === 'h4') {
     return (
-      <h4 className="text-2xl my-4 md:my-8 font-display uppercase tracking-widest">
+      <h4 className="text-lg md:text-xl lg:text-2xl base-heading">
         {children}
       </h4>
     );
   }
   if (style === 'normal') {
-    return <p className="my-4 md:my-8">{children}</p>;
+    return <p className="base-copy">{children}</p>;
   }
   return BlockContent.defaultSerializers.types.block(props);
 };
@@ -149,7 +149,9 @@ const PortableTextModule = ({ text, className, postLayout }: PortableProps) => {
 
   return (
     <CopyBlock
-      className={`portable-text block${className ? ` ${className}` : ''}`}
+      className={`portable-text base-copy-size block${
+        className ? ` ${className}` : ''
+      }`}
     >
       <BlockContent
         projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}

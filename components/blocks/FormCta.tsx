@@ -27,9 +27,7 @@ const FormCta = ({
 }: FormCtaProps) => {
   return (
     <div
-      className={`formCta py-12 lg:py-20 relative${
-        className ? ` ${className}` : ''
-      }`}
+      className={`formCta component-shell${className ? ` ${className}` : ''}`}
     >
       {children}
       <Container
@@ -46,12 +44,7 @@ const FormCta = ({
             </HeadingElement>
           )}
           {subHeading && <p className="sub-heading">{subHeading}</p>}
-          {message && (
-            <PortableTextModule
-              text={message}
-              className="text-sm md:text-md mt-10"
-            />
-          )}
+          {message && <PortableTextModule text={message} className="mt-10" />}
         </div>
         {form && (
           <div

@@ -33,7 +33,7 @@ const AffiliateList = ({
 
   return (
     <div
-      className={`affiliateList relative py-12 lg:py-20${
+      className={`affiliateList component-shell${
         className ? ` ${className}` : ''
       }`}
     >

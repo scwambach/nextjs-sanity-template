@@ -42,7 +42,7 @@ const AffiliateCard = ({
       ) : (
         <p className="text-blue-500 font-bold text-xl my-2 md:my-5">{title}</p>
       )}
-      <p className="clamp text-sm md:text-md">{noOrphans(description)}</p>
+      <p className="clamp base-copy-size">{noOrphans(description)}</p>
     </div>
   );
 };

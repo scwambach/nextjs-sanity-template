@@ -28,7 +28,7 @@ const IconFeatures = ({
   };
   return (
     <div
-      className={`iconFeatures relative py-12 lg:py-20${
+      className={`iconFeatures component-shell${
         className ? ` ${className}` : ''
       }`}
     >

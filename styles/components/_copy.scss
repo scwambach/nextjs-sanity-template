@@ -1,0 +1,25 @@
+@layer components {
+  .base-copy {
+    @apply font-body my-4 md:my-8;
+  }
+
+  .base-copy-size {
+    @apply text-sm md:text-base;
+
+    &.sml {
+      @apply text-xs md:text-sm;
+    }
+
+    &.lrg {
+      @apply text-lg md:text-xl;
+    }
+
+    &.exl {
+      @apply text-xl md:text-2xl;
+    }
+  }
+
+  .base-heading {
+    @apply font-display my-4 md:my-8 uppercase tracking-widest;
+  }
+}

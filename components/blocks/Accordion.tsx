@@ -37,9 +37,7 @@ const Accordion = ({
   };
   return (
     <div
-      className={`accordion relative py-12 lg:py-20${
-        className ? ` ${className}` : ''
-      }`}
+      className={`accordion component-shell${className ? ` ${className}` : ''}`}
     >
       {items ? (
         <Head>
@@ -106,7 +104,7 @@ const Accordion = ({
                 >
                   <PortableTextModule
                     text={content}
-                    className={`bg-blue-500 text-white-100 text-[11px] sm:text-sm md:text-md p-3 sm:p-5 mb-5 pt-5 pb-4 md:pt-8 md:pb-6`}
+                    className={`bg-blue-500 text-white-100 p-3 sm:p-5 mb-5 pt-5 pb-4 md:pt-8 md:pb-6`}
                   />
                 </div>
               </div>

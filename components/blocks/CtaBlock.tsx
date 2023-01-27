@@ -27,9 +27,7 @@ const CtaBlock = ({
 }: CtaBlockProps) => {
   return (
     <div
-      className={`ctaBlock relative py-12 lg:py-20${
-        className ? ` ${className}` : ''
-      }`}
+      className={`ctaBlock component-shell${className ? ` ${className}` : ''}`}
     >
       {children}
 
@@ -49,7 +47,7 @@ const CtaBlock = ({
             >
               <HeadingElement
                 type={indexHeading(index)}
-                className={`font-bold leading-6 ${
+                className={`font-display leading-6 ${
                   centered
                     ? 'text-xl md:text-2xl lg:text-4xl'
                     : 'text-xl sm:text-2xl md:text-4xl lg:text-5xl lg:w-1/2'
@@ -57,11 +55,7 @@ const CtaBlock = ({
               >
                 {noOrphans(cta?.title)}
               </HeadingElement>
-              <p
-                className={`text-xs sm:text-sm md:text-base ${
-                  centered ? '' : 'lg:w-1/2'
-                }`}
-              >
+              <p className={`base-copy-size ${centered ? '' : 'lg:w-1/2'}`}>
                 {noOrphans(cta?.message)}
               </p>
             </div>

@@ -1,0 +1,5 @@
+@layer components {
+  .component-shell {
+    @apply relative py-12 lg:py-20;
+  }
+}

@@ -32,7 +32,7 @@ const Feature = ({
         <p className="mt-5 font-bold md:text-xl">{noOrphans(heading)}</p>
       )}
       {message && (
-        <p className="text-sm md:text-md mt-5">{noOrphans(message)}</p>
+        <p className="base-copy-size sml mt-5">{noOrphans(message)}</p>
       )}
     </div>
   );
