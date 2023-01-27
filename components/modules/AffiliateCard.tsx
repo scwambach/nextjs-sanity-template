@@ -1,4 +1,5 @@
 import { ImageIcon, LinkObject, AffiliateCardProps } from '@components';
+import { noOrphans } from '@utils';
 
 const AffiliateCard = ({
   title,
@@ -32,16 +33,16 @@ const AffiliateCard = ({
       </div>
       {links[0] ? (
         <LinkObject
-          className="text-blue-500 font-bold text-xl my-5"
+          className="text-blue-500 font-bold text-xl my-2 md:my-5"
           newTab
           url={links[0].url}
         >
           {title}
         </LinkObject>
       ) : (
-        <p className="text-blue-500 font-bold text-xl my-5">{title}</p>
+        <p className="text-blue-500 font-bold text-xl my-2 md:my-5">{title}</p>
       )}
-      <p className="text-sm md:text-md">{description}</p>
+      <p className="clamp base-copy-size">{noOrphans(description)}</p>
     </div>
   );
 };

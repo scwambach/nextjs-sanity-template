@@ -27,7 +27,7 @@ const PeopleListing = ({
   };
   return (
     <div
-      className={`peopleListing relative py-12 lg:py-20${
+      className={`peopleListing component-shell${
         className ? ` ${className}` : ''
       }`}
     >

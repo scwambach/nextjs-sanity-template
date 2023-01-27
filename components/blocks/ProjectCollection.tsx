@@ -28,7 +28,7 @@ const ProjectCollection = ({
   };
   return (
     <div
-      className={`projectCollection relative py-12 lg:py-20${
+      className={`projectCollection component-shell${
         className ? ` ${className}` : ''
       }`}
     >

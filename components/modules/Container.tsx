@@ -8,7 +8,6 @@ interface Props {
 const Container = ({ maxWidth, edges = false, children, className }: Props) => {
   return (
     <div
-      data-testid="container"
       className={`container w-full mx-auto${
         !edges ? ' p-wrapMobile md:p-wrap' : ''
       }${className ? ` ${className}` : ''}`}

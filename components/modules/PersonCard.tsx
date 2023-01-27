@@ -30,9 +30,11 @@ const PersonCard = ({
         className="w-full"
       />
       <div className="p-5 shadow-md shadow-black-100 bg-white-100">
-        <p className="font-bold md:text-xl">{name}</p>
-        <p className="text-sm md:text-lg text-blue-500 italic">{position}</p>
-        {description && <p className="mt-2 hidden lg:block ">{description}</p>}
+        <p className="font-bold base-copy-size lrg">{name}</p>
+        <p className="base-copy-size sml text-blue-500 italic">{position}</p>
+        {description && (
+          <p className="base-copy-size mt-2 hidden lg:block ">{description}</p>
+        )}
         {socials && socials.length > 0 && (
           <div className="flex flex-wrap gap-5 mt-5 md:mt-10">
             {socials.map(({ icon, url, _key }) => (

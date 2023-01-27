@@ -57,7 +57,7 @@ const PostCard = ({
       </div>
       <div className="pt-5">
         <p
-          className={`text-lg lg:text-2xl font-bold lg:transition-all ${
+          className={`base-copy-size exl font-bold lg:transition-all ${
             hovering ? 'lg:text-blue-500' : 'lg:text-black-900'
           }`}
           onMouseOver={() => {
@@ -76,16 +76,16 @@ const PostCard = ({
           </LinkObject>
         </p>
         {authors && (
-          <p className="mt-2">
+          <p className="base-copy-size mt-2">
             by&nbsp;
             {parseAuthors(authors, false)}
-            <span className="text-blue-500">
+            <span className="base-copy-size sml text-blue-500">
               <br />
               {dayjs(publishDate).format('MMM DD, YYYY')}
             </span>
           </p>
         )}
-        <p className="mt-10 hidden lg:block">
+        <p className="base-copy-size mt-5 hidden lg:block">
           {noOrphans(pageDescription || blurbMaker(bodyContent))}
         </p>
       </div>

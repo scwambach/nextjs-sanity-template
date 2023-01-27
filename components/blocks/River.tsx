@@ -36,11 +36,7 @@ const River = ({
     subHeading,
   };
   return (
-    <div
-      className={`river py-12 lg:py-20 relative${
-        className ? ` ${className}` : ''
-      }`}
-    >
+    <div className={`river component-shell${className ? ` ${className}` : ''}`}>
       {children}
       {(heading || subHeading) && <Heading {...headingProps} />}
       <Container maxWidth={breakpoints.xl}>

@@ -6,11 +6,11 @@ export const affiliateList = groq`
 _type == "affiliateList" => {
   ${commonBlockProps},
   affiliates[] -> {
-    _id, 
+    _id,
     title,
     defined(customIcon) => { customIcon -> {...} },
     defined(iconImage) => {${imageQuery({ name: 'iconImage' })}},
-    defined(description) => { description },
+    "description": array::join(string::split(description, "")[0..200], "") + "...",
     defined(links) => {
       links[] {
         ${linkObject}

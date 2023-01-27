@@ -34,7 +34,7 @@ const RichText = (props: RichTextProps) => {
 
   return (
     <div
-      className={`richText text-base py-14 lg:py-20 relative${
+      className={`richText text-base component-shell${
         className ? ` ${className}` : ''
       }`}
     >
@@ -52,18 +52,18 @@ const RichText = (props: RichTextProps) => {
         >
           {blockContent && (
             <div className="copy">
-              <PortableTextModule text={blockContent} className="font-body" />
+              <PortableTextModule text={blockContent} />
             </div>
           )}
           {(columns === 'twoColumns' || columns === 'threeColumns') &&
             col2Content && (
-              <div className="copy -mt-4 md:mt-0">
-                <PortableTextModule text={col2Content} className="font-body" />
+              <div className="copy mt-4 md:mt-0">
+                <PortableTextModule text={col2Content} />
               </div>
             )}
           {columns === 'threeColumns' && col3Content && (
-            <div className="copy -mt-4 lg:mt-0">
-              <PortableTextModule text={col3Content} className="font-body" />
+            <div className="copy mt-4 lg:mt-0">
+              <PortableTextModule text={col3Content} />
             </div>
           )}
         </div>

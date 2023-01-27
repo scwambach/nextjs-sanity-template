@@ -33,7 +33,7 @@ const AffiliateList = ({
 
   return (
     <div
-      className={`affiliateList relative py-12 lg:py-20${
+      className={`affiliateList component-shell${
         className ? ` ${className}` : ''
       }`}
     >
@@ -41,7 +41,7 @@ const AffiliateList = ({
       {(heading || subHeading) && <Heading {...headingProps} />}
       <div className="relative">
         <Container maxWidth={breakpoints.xl}>
-          <div className="grid gap-5 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 lg:gap-10 grid-cols-1 xs:grid-cols-2 lg:grid-cols-3">
             {affiliates?.map((affiliate) => {
               return (
                 affiliate && (

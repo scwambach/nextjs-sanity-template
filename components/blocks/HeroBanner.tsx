@@ -48,19 +48,14 @@ const HeroBanner = ({
           >
             <HeadingElement
               type={indexHeading(index)}
-              className="font-display text-xl md:text-2xl lg:text-4xl"
+              className="heading-element lrg"
             >
               {noOrphans(heading)}
             </HeadingElement>
             {subHeading && (
-              <p className="lg:text-lg">{noOrphans(subHeading)}</p>
+              <p className="sub-heading">{noOrphans(subHeading)}</p>
             )}
-            {message && (
-              <PortableTextModule
-                text={message}
-                className="text-sm md:text-md"
-              />
-            )}
+            {message && <PortableTextModule text={message} className="my-5" />}
             {links?.length > 0 && (
               <div className="buttons flex items-center justify-start gap-2">
                 {links.map(

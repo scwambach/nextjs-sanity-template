@@ -78,18 +78,13 @@ const Form = ({
   };
 
   return (
-    <FormContainer
-      data-testid="form"
-      className={`form${className ? ` ${className}` : ''}`}
-    >
+    <FormContainer className={`form${className ? ` ${className}` : ''}`}>
       {heading && (
-        <h4 data-testid="form-heading" className="block font-display text-2xl">
-          {heading}
-        </h4>
+        <h4 className="block font-display text-xl md:text-2xl">{heading}</h4>
       )}
 
       {description && (
-        <PortableTextModule text={description} className="-mt-4" />
+        <PortableTextModule text={description} className="my-5" />
       )}
       <form
         id={`form_${_id}`}
@@ -112,10 +107,7 @@ const Form = ({
                 field && <FormField key={field._key} {...field} index={index} />
             )}
             {beforeSubmitCopy && (
-              <PortableTextModule
-                text={beforeSubmitCopy}
-                className="text-sm md:text-md my-8"
-              />
+              <PortableTextModule text={beforeSubmitCopy} className="my-8" />
             )}
             <Button className="block w-full">
               <button type="submit">

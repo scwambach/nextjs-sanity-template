@@ -13,7 +13,6 @@ const Spinner = ({ className, color, size }: SpinnerProps) => {
         color={color}
         size={size}
         aria-label="Loading Spinner"
-        data-testid="loader"
       />
     </>
   );

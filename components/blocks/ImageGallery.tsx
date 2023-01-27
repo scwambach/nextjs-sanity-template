@@ -32,7 +32,7 @@ const ImageGallery = ({
   };
   return (
     <div
-      className={`imageGallery relative py-20${
+      className={`imageGallery component-shell${
         className ? ` ${className}` : ''
       }`}
     >

@@ -32,22 +32,13 @@ const Heading = ({
         {heading && (
           <HeadingElement
             type={indexHeading(index)}
-            className="font-display text-xl md:text-2xl lg:text-3xl max-w-md"
+            className="heading-element"
           >
             {noOrphans(heading)}
           </HeadingElement>
         )}
-        {subHeading && (
-          <p className="text-lg md:text-xl font-display">
-            {noOrphans(subHeading)}
-          </p>
-        )}
-        {message && (
-          <PortableTextModule
-            text={message}
-            className="text-sm md:text-base my-5"
-          />
-        )}
+        {subHeading && <p className="sub-heading">{noOrphans(subHeading)}</p>}
+        {message && <PortableTextModule text={message} className="my-5" />}
         {links?.length > 0 && (
           <div className="buttons flex items-center justify-center gap-10 mt-10">
             {links.map((link) => (

@@ -31,7 +31,7 @@ const RecentPosts = ({
   };
   return (
     <div
-      className={`recentPosts relative py-12 lg:py-20${
+      className={`recentPosts component-shell${
         className ? ` ${className}` : ''
       }`}
     >

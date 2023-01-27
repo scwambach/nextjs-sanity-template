@@ -27,9 +27,7 @@ const FormCta = ({
 }: FormCtaProps) => {
   return (
     <div
-      className={`formCta py-12 lg:py-20 relative${
-        className ? ` ${className}` : ''
-      }`}
+      className={`formCta component-shell${className ? ` ${className}` : ''}`}
     >
       {children}
       <Container
@@ -40,28 +38,19 @@ const FormCta = ({
           {heading && (
             <HeadingElement
               type={indexHeading(index)}
-              className="font-display text-xl md:text-2xl lg:text-3xl max-w-md"
+              className="heading-element"
             >
               {heading}
             </HeadingElement>
           )}
-          {subHeading && (
-            <p className="text-xl mb-5 font-display">{subHeading}</p>
-          )}
-          {message && (
-            <PortableTextModule
-              text={message}
-              className="text-sm md:text-md mt-10"
-            />
-          )}
+          {subHeading && <p className="sub-heading">{subHeading}</p>}
+          {message && <PortableTextModule text={message} className="mt-10" />}
         </div>
         {form && (
           <div
             className={`sm:w-1/2 ${
               colorCutOff ? 'border-[1px] border-black-900' : ''
-            } -mt-10 lg:-mt-0 ${
-              backgroundColor ? slugify(backgroundColor.toLowerCase()) : ''
-            }`}
+            } ${backgroundColor ? slugify(backgroundColor.toLowerCase()) : ''}`}
           >
             <Form
               {...form}

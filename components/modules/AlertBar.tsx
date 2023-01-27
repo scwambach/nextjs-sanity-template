@@ -2,6 +2,7 @@ import { AlertBarProps, PortableTextModule, MainContext } from '@components';
 import styled from 'styled-components';
 import IosClose from '@meronex/icons/ios/IosClose';
 import { useContext } from 'react';
+import { breakpoints } from '@styles';
 
 const AlertBar = ({ content }: AlertBarProps) => {
   const { setAlerted } = useContext(MainContext);
@@ -11,12 +12,9 @@ const AlertBar = ({ content }: AlertBarProps) => {
   };
   return (
     <AlertBox className="fixed text-center bottom-0 left-0 bg-red-500 w-full text-white-100">
-      <PortableTextModule
-        text={content}
-        className="copy text-sm md:text-base"
-      />
+      <PortableTextModule text={content} />
       <button
-        className="absolute top-1/2 -translate-y-1/2 right-5"
+        className="bg-red-600 sm:bg-transparent absolute top-0 right-0 sm:top-1/2 sm:-translate-y-1/2 sm:right-5"
         onClick={() => {
           handleClose();
         }}
@@ -33,6 +31,12 @@ const AlertBox = styled.div`
   .copy {
     max-width: calc(100% - 120px);
     margin: auto;
+    padding: 10px 2px;
+
+    @media screen and (max-width: ${breakpoints.sm - 1}px) {
+      max-width: calc(100% - 20px);
+      margin: 0 auto 0 0;
+    }
   }
   p {
     margin: 10px;

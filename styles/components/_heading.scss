@@ -1,0 +1,12 @@
+@layer components {
+  .heading-element {
+    @apply font-display text-xl md:text-2xl lg:text-3xl max-w-md;
+
+    &.lrg {
+      @apply lg:text-4xl;
+    }
+  }
+  .sub-heading {
+    @apply text-sm md:text-base lg:text-xl font-display;
+  }
+}
