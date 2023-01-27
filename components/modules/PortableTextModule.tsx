@@ -148,7 +148,9 @@ const PortableTextModule = ({ text, className, postLayout }: PortableProps) => {
   };
 
   return (
-    <CopyBlock className={`block${className ? ` ${className}` : ''}`}>
+    <CopyBlock
+      className={`portable-text block${className ? ` ${className}` : ''}`}
+    >
       <BlockContent
         projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
         dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}

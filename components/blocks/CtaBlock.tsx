@@ -45,25 +45,29 @@ const CtaBlock = ({
             <div
               className={`flex flex-col ${
                 centered ? 'text-center' : 'lg:flex-row lg:gap-20'
-              } gap-10`}
+              } gap-5`}
             >
               <HeadingElement
                 type={indexHeading(index)}
-                className={`font-bold ${
+                className={`font-bold leading-6 ${
                   centered
                     ? 'text-xl md:text-2xl lg:text-4xl'
-                    : 'text-3xl md:text-4xl lg:text-5xl lg:w-1/2'
+                    : 'text-xl sm:text-2xl md:text-4xl lg:text-5xl lg:w-1/2'
                 }`}
               >
                 {noOrphans(cta?.title)}
               </HeadingElement>
-              <p className={`text-sm md:text-md ${centered ? '' : 'lg:w-1/2'}`}>
+              <p
+                className={`text-xs sm:text-sm md:text-base ${
+                  centered ? '' : 'lg:w-1/2'
+                }`}
+              >
                 {noOrphans(cta?.message)}
               </p>
             </div>
             {cta?.links?.length > 0 && (
               <div
-                className={`buttons flex flex-col sm:flex-row gap-2 mt-10${
+                className={`buttons flex items-start sm:flex-row gap-2 mt-10${
                   centered ? ' justify-center' : ''
                 }`}
               >

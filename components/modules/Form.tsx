@@ -82,7 +82,7 @@ const Form = ({
       {heading && <h4 className="block font-display text-2xl">{heading}</h4>}
 
       {description && (
-        <PortableTextModule text={description} className="-mt-4" />
+        <PortableTextModule text={description} className="my-5" />
       )}
       <form
         id={`form_${_id}`}

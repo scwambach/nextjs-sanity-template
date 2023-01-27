@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import 'fonts';
 @import 'settings';
 @import 'global';
@@ -9,7 +13,3 @@
 @import 'iconFeatures';
 @import 'affiliateList';
 @import 'richText';
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

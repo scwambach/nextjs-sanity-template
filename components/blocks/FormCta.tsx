@@ -59,9 +59,7 @@ const FormCta = ({
           <div
             className={`sm:w-1/2 ${
               colorCutOff ? 'border-[1px] border-black-900' : ''
-            } -mt-10 lg:-mt-0 ${
-              backgroundColor ? slugify(backgroundColor.toLowerCase()) : ''
-            }`}
+            } ${backgroundColor ? slugify(backgroundColor.toLowerCase()) : ''}`}
           >
             <Form
               {...form}
