@@ -123,8 +123,3 @@ div {
   text-overflow: ellipsis;
 }
 
-@layer components {
-  .heading {
-    @apply font-display text-xl md:text-2xl lg:text-3xl max-w-md;
-  }
-}

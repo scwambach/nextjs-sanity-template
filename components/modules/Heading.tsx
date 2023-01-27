@@ -32,16 +32,12 @@ const Heading = ({
         {heading && (
           <HeadingElement
             type={indexHeading(index)}
-            className="font-display text-xl md:text-2xl lg:text-3xl max-w-md"
+            className="heading-element"
           >
             {noOrphans(heading)}
           </HeadingElement>
         )}
-        {subHeading && (
-          <p className="text-lg md:text-xl font-display">
-            {noOrphans(subHeading)}
-          </p>
-        )}
+        {subHeading && <p className="sub-heading">{noOrphans(subHeading)}</p>}
         {message && (
           <PortableTextModule
             text={message}

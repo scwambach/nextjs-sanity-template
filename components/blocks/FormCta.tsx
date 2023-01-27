@@ -40,14 +40,12 @@ const FormCta = ({
           {heading && (
             <HeadingElement
               type={indexHeading(index)}
-              className="font-display text-xl md:text-2xl lg:text-3xl max-w-md"
+              className="heading-element"
             >
               {heading}
             </HeadingElement>
           )}
-          {subHeading && (
-            <p className="text-xl mb-5 font-display">{subHeading}</p>
-          )}
+          {subHeading && <p className="sub-heading">{subHeading}</p>}
           {message && (
             <PortableTextModule
               text={message}

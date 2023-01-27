@@ -1,0 +1,12 @@
+@layer components {
+  .heading-element {
+    @apply text-red-400 font-display text-xl md:text-2xl lg:text-3xl max-w-md;
+
+    &.lrg {
+      @apply lg:text-4xl;
+    }
+  }
+  .sub-heading {
+    @apply text-blue-300 text-lg md:text-xl font-display;
+  }
+}
