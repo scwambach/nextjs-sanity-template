@@ -122,3 +122,8 @@ div {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.highlight {
+  text-transform: uppercase;
+  color: $red;
+}

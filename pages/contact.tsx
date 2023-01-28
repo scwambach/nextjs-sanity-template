@@ -7,7 +7,7 @@ import {
   Leaflet,
   LinkObject,
 } from '@components';
-import { getClient, noOrphans } from '@utils';
+import { getClient } from '@utils';
 import { contactQuery } from '@queries';
 import dayjs from 'dayjs';
 
@@ -25,11 +25,7 @@ const ContactPage = ({ doc, form, global }: Props) => {
     contact.cityState || ''
   }${contact.zip || ''}`;
   return (
-    <DataPage
-      data={doc}
-      global={global}
-      message={noOrphans(doc.pageDescription)}
-    >
+    <DataPage data={doc} global={global} message={doc.pageDescription}>
       <div className="bg-blue-500 py-12 lg:py-20">
         <Container className="max-w-xl">
           <div className="flex flex-col lg:flex-row gap-10">

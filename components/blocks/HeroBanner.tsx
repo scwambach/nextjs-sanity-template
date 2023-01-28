@@ -50,7 +50,7 @@ const HeroBanner = ({
               type={indexHeading(index)}
               className="heading-element lrg"
             >
-              {noOrphans(heading)}
+              {heading}
             </HeadingElement>
             {subHeading && (
               <p className="sub-heading">{noOrphans(subHeading)}</p>

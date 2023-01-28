@@ -53,7 +53,7 @@ const CtaBlock = ({
                     : 'text-xl sm:text-2xl md:text-4xl lg:text-5xl lg:w-1/2'
                 }`}
               >
-                {noOrphans(cta?.title)}
+                {cta?.title}
               </HeadingElement>
               <p className={`base-copy-size ${centered ? '' : 'lg:w-1/2'}`}>
                 {noOrphans(cta?.message)}

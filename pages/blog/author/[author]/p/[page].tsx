@@ -6,7 +6,7 @@ import {
   PostCardProps,
   PostList,
 } from '@components';
-import { getClient, noOrphans, listingSettings } from '@utils';
+import { getClient, listingSettings } from '@utils';
 import { blogAuthorQuery } from '@queries';
 import dayjs from 'dayjs';
 
@@ -30,7 +30,7 @@ const AuthorPagination = ({ doc, global }: Props) => {
       <DataPage
         data={doc}
         global={global}
-        message={noOrphans(doc.description)}
+        message={doc.description}
         photo={doc.photo}
       >
         <div className="bg-white-100">

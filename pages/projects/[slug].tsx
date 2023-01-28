@@ -7,7 +7,7 @@ import {
   AllPageProps,
   ImageProps,
 } from '@components';
-import { getClient, listingSettings, noOrphans } from '@utils';
+import { getClient, listingSettings } from '@utils';
 import { projectQuery } from '@queries';
 import dayjs from 'dayjs';
 import { breakpoints } from '@styles';
@@ -25,11 +25,7 @@ const today = dayjs(new Date()).format('YYYY-MM-DD');
 const ProjectPage = ({ doc, global }: Props) => {
   return (
     doc && (
-      <DataPage
-        data={doc}
-        global={global}
-        message={noOrphans(doc.pageDescription)}
-      >
+      <DataPage data={doc} global={global} message={doc.pageDescription}>
         <div className="relative pb-mobileVideo sm:pb-video lg:pb-0 lg:h-[500px] xl:h-[700px]">
           <ProgressiveImage {...doc.postImage} isBackground mobileCrop />
         </div>
