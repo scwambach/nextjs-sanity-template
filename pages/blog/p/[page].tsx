@@ -5,7 +5,7 @@ import {
   AllPageProps,
   CommonPageProps,
 } from '@components';
-import { getClient, noOrphans, listingSettings } from '@utils';
+import { getClient, listingSettings } from '@utils';
 import { blogQuery } from '@queries';
 import dayjs from 'dayjs';
 
@@ -24,11 +24,7 @@ const today = dayjs(new Date()).format('YYYY-MM-DD');
 const PostPagination = ({ doc, global }: Props) => {
   return (
     doc && (
-      <DataPage
-        data={doc}
-        global={global}
-        message={noOrphans(doc.pageDescription)}
-      >
+      <DataPage data={doc} global={global} message={doc.pageDescription}>
         <div className="bg-white-100">
           <PostList
             posts={doc.posts}

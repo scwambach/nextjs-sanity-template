@@ -34,7 +34,7 @@ const Heading = ({
             type={indexHeading(index)}
             className="heading-element"
           >
-            {noOrphans(heading)}
+            {heading}
           </HeadingElement>
         )}
         {subHeading && <p className="sub-heading">{noOrphans(subHeading)}</p>}

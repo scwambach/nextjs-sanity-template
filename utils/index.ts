@@ -16,4 +16,5 @@ export { parseAuthors } from './parseAuthors';
 export { parseCategories } from './parseCategories';
 export { parseDates } from './parseDates';
 export { slugify } from './slugify';
+export { specialText } from './specialText';
 export { convertTime12to24, timePrettier, dateTimeConverter } from './time';

@@ -11,7 +11,7 @@ import {
 } from '@components';
 import { RiverFeatureProps } from 'components/blocks/River';
 import { AiFillPlayCircle } from '@meronex/icons/ai';
-import { indexHeading, noOrphans } from '@utils';
+import { indexHeading } from '@utils';
 
 interface FeatureProps {
   index: number;
@@ -73,7 +73,7 @@ const RiverFeature = ({
             type={indexHeading(parentIndex)}
             className="heading-element mb-2 md:mb-5 text-blue-500"
           >
-            {noOrphans(title)}
+            {title}
           </HeadingElement>
         )}
         {blockContent && <PortableTextModule text={blockContent} />}

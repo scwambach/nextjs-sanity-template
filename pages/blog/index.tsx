@@ -5,7 +5,7 @@ import {
   AllPageProps,
   PostCardProps,
 } from '@components';
-import { getClient, listingSettings, noOrphans } from '@utils';
+import { getClient, listingSettings } from '@utils';
 import { blogQuery } from '@queries';
 import dayjs from 'dayjs';
 
@@ -22,11 +22,7 @@ const today = dayjs(new Date()).format('YYYY-MM-DD');
 
 const BlogPage = ({ doc, global }: Props) => {
   return (
-    <DataPage
-      data={doc}
-      global={global}
-      message={noOrphans(doc.pageDescription)}
-    >
+    <DataPage data={doc} global={global} message={doc.pageDescription}>
       <div className="bg-white-100">
         <PostList
           posts={doc.posts}
