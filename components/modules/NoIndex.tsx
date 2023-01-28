@@ -3,7 +3,7 @@ import { breakpoints } from '@styles';
 
 const NoIndex = () => {
   return (
-    <div className="text-xl md:text-3xl font-bold text-center flex flex-col justify-center items-center h-screen">
+    <div className="text-xl bg-white-100 md:text-3xl font-bold text-center flex flex-col justify-center items-center h-screen">
       <Container maxWidth={breakpoints.md}>
         <h1 className="text-3xl md:text-5xl mb-10 uppercase tracking-wider">
           Welcome to the starter&nbsp;template!
